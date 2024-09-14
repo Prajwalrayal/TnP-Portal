@@ -1,6 +1,6 @@
 package com.iiitdmj.placement_portal.service;
 
-import com.google.common.base.Preconditions;
+
 import com.iiitdmj.placement_portal.dto.ActivityDTO;
 import com.iiitdmj.placement_portal.entity.Activity;
 import com.iiitdmj.placement_portal.repository.ActivityRepository;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class ActivityServiceImplementation implements ActivityService {
