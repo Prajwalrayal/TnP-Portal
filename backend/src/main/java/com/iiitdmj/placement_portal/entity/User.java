@@ -7,8 +7,9 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
@@ -25,10 +26,12 @@ public class User {
     private String role;
     private String linkedinUrl;
 
-    @Column(nullable = false)
-    private LocalDate createdAt;
+    @NonNull
+    private String password;
 
     @Column(nullable = false)
-    private LocalDate lastLoginAt;
+    private LocalDateTime createdAt;
 
+    @Column(nullable = false)
+    private LocalDateTime lastLoginAt;
 }

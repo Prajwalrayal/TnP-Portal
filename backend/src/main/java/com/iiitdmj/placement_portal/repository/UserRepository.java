@@ -1,7 +1,10 @@
 package com.iiitdmj.placement_portal.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import com.iiitdmj.placement_portal.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface UserRepository extends JpaRepository<User, String> {
+@Repository
+public interface UserRepository extends JpaRepository<User, Integer> {
+    User findByEmail(String email);
 }
