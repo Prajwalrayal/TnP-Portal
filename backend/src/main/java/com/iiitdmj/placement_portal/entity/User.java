@@ -1,9 +1,7 @@
 package com.iiitdmj.placement_portal.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
     @Id
     private String email;
@@ -23,7 +22,9 @@ public class User {
     @Column(nullable = false)
     private String firstName;
     private String lastName;
-    private String role;
+
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
     private String linkedinUrl;
 
     @NonNull
