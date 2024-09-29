@@ -1,7 +1,6 @@
 package com.iiitdmj.placement_portal.dto;
 
 import com.iiitdmj.placement_portal.entity.User;
-import com.iiitdmj.placement_portal.entity.UserRole;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
@@ -17,7 +16,7 @@ public class UserResponse {
     private String email;
     private String firstName;
     private String lastName;
-    private UserRole role;
+    private String role;
     private String linkedinUrl;
     private LocalDateTime createdAt;
     private LocalDateTime lastLoginAt;

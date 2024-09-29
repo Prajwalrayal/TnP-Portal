@@ -1,5 +1,6 @@
 package com.iiitdmj.placement_portal.service;
 
+
 import com.iiitdmj.placement_portal.dto.ActivityDTO;
 import com.iiitdmj.placement_portal.entity.Activity;
 import com.iiitdmj.placement_portal.repository.ActivityRepository;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
 
 @Service
 public class ActivityServiceImplementation implements ActivityService {
