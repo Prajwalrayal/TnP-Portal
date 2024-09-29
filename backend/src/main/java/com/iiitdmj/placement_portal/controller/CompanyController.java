@@ -20,14 +20,14 @@ public class CompanyController {
     this.companyService = companyService;
   }
 
-  @GetMapping("/")
+  @GetMapping("")
   public List<Company> getAllCompanies() {
     return companyService.getAllCompanies();
   }
 
-  @PostMapping("/")
-  public Company addCompany(@Valid @RequestBody Company company) {
-    return companyService.addCompany(company);  
+  @PostMapping("")
+  public Company addCompany(@Valid @RequestBody Company companyRequest) {
+    return companyService.addCompany(companyRequest);
   }
 
   @GetMapping("/{id}")

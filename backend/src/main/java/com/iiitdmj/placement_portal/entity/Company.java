@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.net.URL;
+import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
@@ -24,4 +25,16 @@ public class Company {
     private String email;
     private String description;
     private URL website;
+    private String address;
+
+    @ElementCollection
+    @CollectionTable(name = "company_roles", joinColumns = @JoinColumn(name = "company_id"))
+    @Column(name = "role")
+    private List<String> rolesOffered;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "company_id")
+    private List<Salary> salaries; // One to many relationship with salary for different roles
+
+
 }
