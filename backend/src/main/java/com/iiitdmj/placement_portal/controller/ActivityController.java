@@ -1,7 +1,10 @@
 package com.iiitdmj.placement_portal.controller;
 
 import com.iiitdmj.placement_portal.dto.ActivityDTO;
+import com.iiitdmj.placement_portal.dto.ActivityLogDTO;
+import com.iiitdmj.placement_portal.dto.ActivityResponse;
 import com.iiitdmj.placement_portal.entity.Activity;
+import com.iiitdmj.placement_portal.entity.ActivityLog;
 import com.iiitdmj.placement_portal.service.ActivityService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,17 +22,29 @@ public class ActivityController {
     public ActivityController(ActivityService activityService) {
         this.activityService = activityService;
     }
-    @GetMapping("/")
-    public List<Activity> getAllActivities() {
+    @GetMapping("")
+    public List<ActivityResponse> getAllActivities() {
         return activityService.getAllActivites();
     }
-    @PostMapping("/")
-    public Activity addActivity(@Valid @RequestBody Activity activity) {
-        return activityService.addActivity(activity);
+
+    @PostMapping("")
+    public ActivityResponse addActivity(@Valid @RequestBody ActivityDTO activityDTO) {
+        return activityService.addActivity(activityDTO);
     }
+
     @PutMapping("/{id}")
     public Activity updateActivity(@Valid @RequestBody ActivityDTO activity, @PathVariable Integer id) {
         return activityService.updateActivity(activity,id);
+    }
+
+    @PostMapping("/add-log")
+    public ActivityLog addLog(@Valid @RequestBody ActivityLogDTO activityLogDTO) {
+        return activityService.addLog(activityLogDTO);
+    }
+
+    @GetMapping("/logs/{id}")
+    public List<ActivityLog> getLogs(@PathVariable Integer id) {
+        return activityService.getLogs(id);
     }
 
 

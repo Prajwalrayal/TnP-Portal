@@ -28,6 +28,7 @@ public class Activity {
 
     @ManyToOne
     @JoinColumn(name = "user_email")
+    @JsonIgnore
     private User user;
 
     @ManyToOne
@@ -39,9 +40,6 @@ public class Activity {
     private Status status;
     private LocalDateTime createdAt;
     private LocalDateTime lastUpdated;
-
-    @ElementCollection
-    private List<String> logs;
 
 }
 

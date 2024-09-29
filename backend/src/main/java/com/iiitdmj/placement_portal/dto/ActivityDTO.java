@@ -17,6 +17,9 @@ public class ActivityDTO {
     private String description;
     @NotNull
     private Status status;
+    private Integer companyId;
+    private String userEmail;
+
 }
 
 
