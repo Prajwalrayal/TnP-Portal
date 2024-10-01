@@ -1,6 +1,6 @@
 package com.iiitdmj.placement_portal.repository;
 
-import com.iiitdmj.placement_portal.entity.TprRole;
+import com.iiitdmj.placement_portal.entity.User.TprRole;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

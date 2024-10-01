@@ -5,7 +5,7 @@ import com.iiitdmj.placement_portal.dto.ActivityLogDTO;
 import com.iiitdmj.placement_portal.dto.ActivityResponse;
 import com.iiitdmj.placement_portal.entity.Activity;
 import com.iiitdmj.placement_portal.entity.ActivityLog;
-import com.iiitdmj.placement_portal.entity.User;
+import com.iiitdmj.placement_portal.entity.User.User;
 import com.iiitdmj.placement_portal.repository.ActivityLogRepository;
 import com.iiitdmj.placement_portal.repository.ActivityRepository;
 import com.iiitdmj.placement_portal.repository.CompanyRepository;

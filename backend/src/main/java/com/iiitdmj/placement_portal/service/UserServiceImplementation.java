@@ -2,7 +2,10 @@ package com.iiitdmj.placement_portal.service;
 
 import com.iiitdmj.placement_portal.constants.UserRole;
 import com.iiitdmj.placement_portal.dto.UserResponse;
-import com.iiitdmj.placement_portal.entity.*;
+import com.iiitdmj.placement_portal.entity.User.AdminRole;
+import com.iiitdmj.placement_portal.entity.User.StudentRole;
+import com.iiitdmj.placement_portal.entity.User.TprRole;
+import com.iiitdmj.placement_portal.entity.User.User;
 import com.iiitdmj.placement_portal.repository.AdminRoleRepository;
 import com.iiitdmj.placement_portal.repository.StudentRoleRepository;
 import com.iiitdmj.placement_portal.repository.TprRoleRepository;

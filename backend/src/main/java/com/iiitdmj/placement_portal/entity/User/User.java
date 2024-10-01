@@ -1,4 +1,4 @@
-package com.iiitdmj.placement_portal.entity;
+package com.iiitdmj.placement_portal.entity.User;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.iiitdmj.placement_portal.constants.UserRole;

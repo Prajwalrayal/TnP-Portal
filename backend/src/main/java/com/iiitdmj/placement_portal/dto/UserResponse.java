@@ -1,6 +1,6 @@
 package com.iiitdmj.placement_portal.dto;
 
-import com.iiitdmj.placement_portal.entity.User;
+import com.iiitdmj.placement_portal.entity.User.User;
 import com.iiitdmj.placement_portal.constants.UserRole;
 import lombok.Data;
 

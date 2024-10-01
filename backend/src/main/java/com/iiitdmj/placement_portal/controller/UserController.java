@@ -1,7 +1,7 @@
 package com.iiitdmj.placement_portal.controller;
 
 import com.iiitdmj.placement_portal.dto.UserResponse;
-import com.iiitdmj.placement_portal.entity.User;
+import com.iiitdmj.placement_portal.entity.User.User;
 import com.iiitdmj.placement_portal.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

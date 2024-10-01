@@ -1,17 +1,15 @@
-package com.iiitdmj.placement_portal.entity;
+package com.iiitdmj.placement_portal.entity.User;
 
-import com.iiitdmj.placement_portal.constants.UserRole;
 import jakarta.persistence.Entity;
 
 @Entity
-public class AdminRole extends User {
-    public AdminRole() {}
-    public AdminRole(User user) {
+public class    StudentRole extends User {
+    public StudentRole(User user) {
         this.setEmail(user.getEmail());
         this.setFirstName(user.getFirstName());
         this.setLastName(user.getLastName());
         this.setPassword(user.getPassword());
-        this.setRole(UserRole.ADMIN);
+        this.setRole(user.getRole());
         this.setLinkedinUrl(user.getLinkedinUrl());
         this.setCreatedAt(user.getCreatedAt());
         this.setLastLoginAt(user.getLastLoginAt());
