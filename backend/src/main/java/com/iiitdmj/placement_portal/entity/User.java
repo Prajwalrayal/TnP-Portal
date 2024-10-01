@@ -1,6 +1,7 @@
 package com.iiitdmj.placement_portal.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.iiitdmj.placement_portal.constants.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
