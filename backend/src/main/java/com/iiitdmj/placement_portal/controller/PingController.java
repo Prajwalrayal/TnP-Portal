@@ -10,29 +10,29 @@ import org.springframework.web.bind.annotation.RestController;
 public class PingController {
     @GetMapping
     public String ping() {
-        return "Hello World";
+        return "Hello World no sec needed";
     }
 
     @GetMapping("/protected")
     public String protectedPing() {
-        return "Hello World";
+        return "Hello World normal login needed";
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasPermission(null, 'ROLE_ADMIN')")
     @GetMapping("/admin_role")
     public String adminRole() {
-        return "Hello World";
+        return "Hello World. Admins only";
     }
 
-    @PreAuthorize("hasRole('ROLE_TPR')")
+    @PreAuthorize("hasPermission(null, 'ROLE_TPR')")
     @GetMapping("/tpr_role")
     public String tprRole() {
-        return "Hello World";
+        return "Hello World.. For the TPRs";
     }
 
-    @PreAuthorize("hasRole('ROLE_STUDENT')")
+    @PreAuthorize("hasPermission(null, 'ROLE_STUDENT')")
     @GetMapping("/student_role")
     public String studentRole() {
-        return "Hello World";
+        return "Hello World. For the student";
     }
 }
