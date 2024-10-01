@@ -2,11 +2,10 @@ package com.iiitdmj.placement_portal.dto;
 
 import com.iiitdmj.placement_portal.entity.Activity;
 import com.iiitdmj.placement_portal.entity.Company;
-import com.iiitdmj.placement_portal.entity.Status;
+import com.iiitdmj.placement_portal.constants.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.cglib.core.Local;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
