@@ -8,12 +8,14 @@ import com.iiitdmj.placement_portal.entity.ActivityLog;
 import com.iiitdmj.placement_portal.service.ActivityService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/activities")
+@PreAuthorize("hasPermission(null, 'ROLE_TPR')")
 public class ActivityController {
 
     @Autowired
