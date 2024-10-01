@@ -3,7 +3,7 @@ package com.iiitdmj.placement_portal.entity;
 import jakarta.persistence.Entity;
 
 @Entity
-public class StudentRole extends User {
+public class    StudentRole extends User {
     public StudentRole() {}
     public StudentRole(User user) {
         this.setEmail(user.getEmail());
