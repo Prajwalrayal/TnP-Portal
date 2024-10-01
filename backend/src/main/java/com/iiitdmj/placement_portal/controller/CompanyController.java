@@ -1,6 +1,7 @@
 package com.iiitdmj.placement_portal.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 
@@ -26,6 +27,7 @@ public class CompanyController {
   }
 
   @PostMapping("")
+  @PreAuthorize("hasPermission(null, 'ROLE_TPR')")
   public Company addCompany(@Valid @RequestBody Company companyRequest) {
     return companyService.addCompany(companyRequest);
   }
@@ -36,6 +38,7 @@ public class CompanyController {
   }
 
   @PutMapping("/{id}")
+    @PreAuthorize("hasPermission(null, 'ROLE_TPR')")
   public Company updateCompany(@Valid @RequestBody Company company, @PathVariable Integer id) {
     return companyService.updateCompany(company, id);
   }

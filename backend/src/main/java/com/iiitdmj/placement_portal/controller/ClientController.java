@@ -3,6 +3,7 @@ package com.iiitdmj.placement_portal.controller;
 import com.iiitdmj.placement_portal.entity.Client;
 import com.iiitdmj.placement_portal.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/clients")
+@PreAuthorize("hasPermission(null, 'ROLE_TPR')")
 public class ClientController {
 
     @Autowired
