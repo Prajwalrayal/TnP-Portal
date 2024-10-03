@@ -1,0 +1,1882 @@
+[
+  {
+    "id": "1",
+    "name": "Tech Corp",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://techcorp.com",
+    "location": "New York",
+    "categories": [
+      "Software",
+      "AI",
+      "Tech"
+    ],
+    "ctc_lpa": 17.77,
+    "base_inr": 1200740,
+    "criteria": "CPI > 8/10 and No Backlogs",
+    "roles": [
+      "UI/UX Designer",
+      "Product Manager",
+      "Associate Software Engineer"
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Green Solutions",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://greensolutions.com",
+    "location": "San Francisco",
+    "categories": [
+      "Energy",
+      "Environment",
+      "Renewable"
+    ],
+    "ctc_lpa": 21.54,
+    "base_inr": 957337,
+    "criteria": "CPI > 7.5/10",
+    "roles": [
+      "Product Manager",
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Edu Learn",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://edulearn.com",
+    "location": "London",
+    "categories": [
+      "Education",
+      "E-learning"
+    ],
+    "ctc_lpa": 29.41,
+    "base_inr": 564001,
+    "criteria": "No Backlogs for last 2 years",
+    "roles": [
+      "Product Manager",
+      "DevOps Engineer",
+      "Associate Software Engineer"
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Health Plus",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://healthplus.com",
+    "location": "Berlin",
+    "categories": [
+      "Healthcare",
+      "Tech"
+    ],
+    "ctc_lpa": 16.85,
+    "base_inr": 1595356,
+    "criteria": "No Backlogs",
+    "roles": [
+      "Associate Software Engineer"
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Eco Farms",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://ecofarms.com",
+    "location": "Paris",
+    "categories": [
+      "Agriculture",
+      "Organic"
+    ],
+    "ctc_lpa": 14.24,
+    "base_inr": 1868202,
+    "criteria": "No Backlogs for last 2 years",
+    "roles": [
+      "Associate Software Engineer"
+    ]
+  },
+  {
+    "id": "6",
+    "name": "Cloudsy",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://cloudsy.com",
+    "location": "Seattle",
+    "categories": [
+      "Cloud",
+      "Software"
+    ],
+    "ctc_lpa": 21.69,
+    "base_inr": 506172,
+    "criteria": "CPI > 8/10 and No Backlogs",
+    "roles": [
+      "Data Analyst"
+    ]
+  },
+  {
+    "id": "7",
+    "name": "FinTrust",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://fintrust.com",
+    "location": "Zurich",
+    "categories": [
+      "Finance",
+      "Banking"
+    ],
+    "ctc_lpa": 9.91,
+    "base_inr": 319569,
+    "criteria": "CPI > 9/10",
+    "roles": [
+      "Data Analyst"
+    ]
+  },
+  {
+    "id": "8",
+    "name": "RetailX",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://retailx.com",
+    "location": "Tokyo",
+    "categories": [
+      "Retail",
+      "Tech"
+    ],
+    "ctc_lpa": 17.62,
+    "base_inr": 1905989,
+    "criteria": "CPI > 6.5/10",
+    "roles": [
+      "Product Manager"
+    ]
+  },
+  {
+    "id": "9",
+    "name": "AutoDrive",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://autodrive.com",
+    "location": "Los Angeles",
+    "categories": [
+      "Automotive",
+      "AI"
+    ],
+    "ctc_lpa": 11.67,
+    "base_inr": 460013,
+    "criteria": "CPI > 7.5/10",
+    "roles": [
+      "Product Manager"
+    ]
+  },
+  {
+    "id": "10",
+    "name": "Foodies",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://foodies.com",
+    "location": "Chicago",
+    "categories": [
+      "Food",
+      "Delivery"
+    ],
+    "ctc_lpa": 18.02,
+    "base_inr": 1680457,
+    "criteria": "CPI > 7.5/10",
+    "roles": [
+      "Product Manager",
+      "UI/UX Designer"
+    ]
+  },
+  {
+    "id": "11",
+    "name": "Tech Innovators",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://techinnovators.com",
+    "location": "Boston",
+    "categories": [
+      "Software",
+      "AI",
+      "Tech"
+    ],
+    "ctc_lpa": 15.64,
+    "base_inr": 896351,
+    "criteria": "CPI > 6.5/10",
+    "roles": [
+      "Product Manager",
+      "Data Analyst",
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "12",
+    "name": "EcoPower",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://ecopower.com",
+    "location": "Austin",
+    "categories": [
+      "Energy",
+      "Environment",
+      "Renewable"
+    ],
+    "ctc_lpa": 25.87,
+    "base_inr": 1418906,
+    "criteria": "CPI > 7.5/10",
+    "roles": [
+      "Business Analyst"
+    ]
+  },
+  {
+    "id": "13",
+    "name": "EduPro",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://edupro.com",
+    "location": "Sydney",
+    "categories": [
+      "Education",
+      "E-learning"
+    ],
+    "ctc_lpa": 21.92,
+    "base_inr": 915462,
+    "criteria": "No Backlogs",
+    "roles": [
+      "Product Manager"
+    ]
+  },
+  {
+    "id": "14",
+    "name": "MediCare",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://medicare.com",
+    "location": "Toronto",
+    "categories": [
+      "Healthcare",
+      "Tech"
+    ],
+    "ctc_lpa": 8.5,
+    "base_inr": 340181,
+    "criteria": "CPI > 7/10",
+    "roles": [
+      "Data Analyst"
+    ]
+  },
+  {
+    "id": "15",
+    "name": "FarmFresh",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://farmfresh.com",
+    "location": "Dublin",
+    "categories": [
+      "Agriculture",
+      "Organic"
+    ],
+    "ctc_lpa": 12.44,
+    "base_inr": 390971,
+    "criteria": "CPI > 9/10",
+    "roles": [
+      "UI/UX Designer"
+    ]
+  },
+  {
+    "id": "16",
+    "name": "CloudBase",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://cloudbase.com",
+    "location": "Vancouver",
+    "categories": [
+      "Cloud",
+      "Software"
+    ],
+    "ctc_lpa": 16.62,
+    "base_inr": 1492926,
+    "criteria": "CPI > 9/10",
+    "roles": [
+      "Business Analyst",
+      "Product Manager",
+      "Software Developer"
+    ]
+  },
+  {
+    "id": "17",
+    "name": "BankSecure",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://banksecure.com",
+    "location": "Geneva",
+    "categories": [
+      "Finance",
+      "Banking"
+    ],
+    "ctc_lpa": 12.53,
+    "base_inr": 1840733,
+    "criteria": "CPI > 7/10",
+    "roles": [
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "18",
+    "name": "RetailPro",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://retailpro.com",
+    "location": "Hong Kong",
+    "categories": [
+      "Retail",
+      "Tech"
+    ],
+    "ctc_lpa": 28.41,
+    "base_inr": 870443,
+    "criteria": "CPI > 7/10",
+    "roles": [
+      "Software Developer"
+    ]
+  },
+  {
+    "id": "19",
+    "name": "DriveAI",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://driveai.com",
+    "location": "San Diego",
+    "categories": [
+      "Automotive",
+      "AI"
+    ],
+    "ctc_lpa": 28.22,
+    "base_inr": 828218,
+    "criteria": "CPI > 9/10",
+    "roles": [
+      "Business Analyst",
+      "UI/UX Designer",
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "20",
+    "name": "FreshEats",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://fresheats.com",
+    "location": "Miami",
+    "categories": [
+      "Food",
+      "Delivery"
+    ],
+    "ctc_lpa": 18.58,
+    "base_inr": 906831,
+    "criteria": "CPI > 9/10",
+    "roles": [
+      "Associate Software Engineer",
+      "Business Analyst",
+      "Data Analyst"
+    ]
+  },
+  {
+    "id": "21",
+    "name": "HealthAdvance",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://healthadvance.com",
+    "location": "Singapore",
+    "categories": [
+      "Healthcare",
+      "Tech"
+    ],
+    "ctc_lpa": 4.84,
+    "base_inr": 1613411,
+    "criteria": "CPI > 8/10 and No Backlogs",
+    "roles": [
+      "Business Analyst",
+      "Associate Software Engineer"
+    ]
+  },
+  {
+    "id": "22",
+    "name": "FinTech Labs",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://fintechlabs.com",
+    "location": "New Delhi",
+    "categories": [
+      "Finance",
+      "Tech"
+    ],
+    "ctc_lpa": 14.84,
+    "base_inr": 1061163,
+    "criteria": "CPI > 7.5/10",
+    "roles": [
+      "Data Analyst",
+      "Business Analyst"
+    ]
+  },
+  {
+    "id": "23",
+    "name": "ShopNext",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://shopnext.com",
+    "location": "Melbourne",
+    "categories": [
+      "Retail",
+      "E-commerce"
+    ],
+    "ctc_lpa": 17.72,
+    "base_inr": 377465,
+    "criteria": "No Backlogs",
+    "roles": [
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "24",
+    "name": "AgroTech",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://agrotech.com",
+    "location": "Nairobi",
+    "categories": [
+      "Agriculture",
+      "Tech"
+    ],
+    "ctc_lpa": 26.65,
+    "base_inr": 750781,
+    "criteria": "CPI > 7/10",
+    "roles": [
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "25",
+    "name": "TravelEase",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://travelease.com",
+    "location": "Bangkok",
+    "categories": [
+      "Travel",
+      "Tech"
+    ],
+    "ctc_lpa": 20.8,
+    "base_inr": 951239,
+    "criteria": "No Backlogs",
+    "roles": [
+      "UI/UX Designer",
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "26",
+    "name": "TechFarm",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://techfarm.com",
+    "location": "Cairo",
+    "categories": [
+      "Tech",
+      "Agriculture"
+    ],
+    "ctc_lpa": 29.62,
+    "base_inr": 1212507,
+    "criteria": "CPI > 7.5/10",
+    "roles": [
+      "Business Analyst",
+      "UI/UX Designer"
+    ]
+  },
+  {
+    "id": "27",
+    "name": "EventNow",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://eventnow.com",
+    "location": "Dubai",
+    "categories": [
+      "Events",
+      "Tech"
+    ],
+    "ctc_lpa": 21.23,
+    "base_inr": 469201,
+    "criteria": "CPI > 8/10 and No Backlogs",
+    "roles": [
+      "Business Analyst",
+      "UI/UX Designer"
+    ]
+  },
+  {
+    "id": "28",
+    "name": "MedInnovate",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://medinnovate.com",
+    "location": "Oslo",
+    "categories": [
+      "Healthcare",
+      "Tech"
+    ],
+    "ctc_lpa": 17.73,
+    "base_inr": 1464215,
+    "criteria": "CPI > 9/10",
+    "roles": [
+      "Data Analyst",
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "29",
+    "name": "LearnX",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://learnx.com",
+    "location": "Amsterdam",
+    "categories": [
+      "Education",
+      "Tech"
+    ],
+    "ctc_lpa": 12.58,
+    "base_inr": 419623,
+    "criteria": "CPI > 9/10",
+    "roles": [
+      "Software Developer",
+      "DevOps Engineer",
+      "UI/UX Designer"
+    ]
+  },
+  {
+    "id": "30",
+    "name": "Green Innovations",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://greeninnovations.com",
+    "location": "Helsinki",
+    "categories": [
+      "Environment",
+      "Tech"
+    ],
+    "ctc_lpa": 28.86,
+    "base_inr": 604331,
+    "criteria": "CPI > 8/10 and No Backlogs",
+    "roles": [
+      "Business Analyst"
+    ]
+  },
+  {
+    "id": "31",
+    "name": "RetailWare",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://retailware.com",
+    "location": "Stockholm",
+    "categories": [
+      "Retail",
+      "Software"
+    ],
+    "ctc_lpa": 10.72,
+    "base_inr": 326213,
+    "criteria": "CPI > 7.5/10",
+    "roles": [
+      "UI/UX Designer"
+    ]
+  },
+  {
+    "id": "32",
+    "name": "UrbanPlan",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://urbanplan.com",
+    "location": "Seoul",
+    "categories": [
+      "Urban Planning",
+      "Tech"
+    ],
+    "ctc_lpa": 12.79,
+    "base_inr": 347328,
+    "criteria": "CPI > 9/10",
+    "roles": [
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "33",
+    "name": "SolarOne",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://solarone.com",
+    "location": "Lisbon",
+    "categories": [
+      "Energy",
+      "Renewable"
+    ],
+    "ctc_lpa": 24.88,
+    "base_inr": 780199,
+    "criteria": "No active backlogs",
+    "roles": [
+      "Business Analyst",
+      "Software Developer"
+    ]
+  },
+  {
+    "id": "34",
+    "name": "AutoTech",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://autotech.com",
+    "location": "Mexico City",
+    "categories": [
+      "Automotive",
+      "Tech"
+    ],
+    "ctc_lpa": 28.41,
+    "base_inr": 1692236,
+    "criteria": "No Backlogs",
+    "roles": [
+      "Software Developer"
+    ]
+  },
+  {
+    "id": "35",
+    "name": "FoodHub",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://foodhub.com",
+    "location": "Buenos Aires",
+    "categories": [
+      "Food",
+      "Tech"
+    ],
+    "ctc_lpa": 11.89,
+    "base_inr": 712388,
+    "criteria": "CPI > 8/10 and No Backlogs",
+    "roles": [
+      "Product Manager"
+    ]
+  },
+  {
+    "id": "36",
+    "name": "CleanEnergy",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://cleanenergy.com",
+    "location": "Barcelona",
+    "categories": [
+      "Energy",
+      "Environment"
+    ],
+    "ctc_lpa": 12.43,
+    "base_inr": 419599,
+    "criteria": "CPI > 6.5/10",
+    "roles": [
+      "Associate Software Engineer",
+      "Data Analyst",
+      "Product Manager"
+    ]
+  },
+  {
+    "id": "37",
+    "name": "BioHealth",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://biohealth.com",
+    "location": "Copenhagen",
+    "categories": [
+      "Biotech",
+      "Healthcare"
+    ],
+    "ctc_lpa": 4.86,
+    "base_inr": 1101164,
+    "criteria": "CPI > 8/10 and No Backlogs",
+    "roles": [
+      "Associate Software Engineer",
+      "Data Analyst",
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "38",
+    "name": "AutoNext",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://autonext.com",
+    "location": "Beijing",
+    "categories": [
+      "Automotive",
+      "AI"
+    ],
+    "ctc_lpa": 11.05,
+    "base_inr": 1396075,
+    "criteria": "CPI > 6.5/10",
+    "roles": [
+      "Associate Software Engineer",
+      "Business Analyst"
+    ]
+  },
+  {
+    "id": "39",
+    "name": "FinServe",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://finserve.com",
+    "location": "Milan",
+    "categories": [
+      "Finance",
+      "Tech"
+    ],
+    "ctc_lpa": 16.6,
+    "base_inr": 1334458,
+    "criteria": "No Backlogs for last 2 years",
+    "roles": [
+      "Associate Software Engineer",
+      "Product Manager"
+    ]
+  },
+  {
+    "id": "40",
+    "name": "FoodX",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://foodx.com",
+    "location": "Cape Town",
+    "categories": [
+      "Food",
+      "Delivery"
+    ],
+    "ctc_lpa": 15.75,
+    "base_inr": 794850,
+    "criteria": "CPI > 7.5/10",
+    "roles": [
+      "Data Analyst",
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "41",
+    "name": "TravelTech",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://traveltech.com",
+    "location": "Jakarta",
+    "categories": [
+      "Travel",
+      "Tech"
+    ],
+    "ctc_lpa": 27.97,
+    "base_inr": 1496764,
+    "criteria": "CPI > 9/10",
+    "roles": [
+      "Associate Software Engineer"
+    ]
+  },
+  {
+    "id": "42",
+    "name": "SecureNet",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://securenet.com",
+    "location": "Brussels",
+    "categories": [
+      "Security",
+      "Tech"
+    ],
+    "ctc_lpa": 18.44,
+    "base_inr": 1844623,
+    "criteria": "CPI > 7.5/10",
+    "roles": [
+      "Associate Software Engineer"
+    ]
+  },
+  {
+    "id": "43",
+    "name": "PowerGrid",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://powergrid.com",
+    "location": "Houston",
+    "categories": [
+      "Energy",
+      "Tech"
+    ],
+    "ctc_lpa": 12.01,
+    "base_inr": 1059690,
+    "criteria": "No Backlogs for last 2 years",
+    "roles": [
+      "Associate Software Engineer",
+      "Software Developer"
+    ]
+  },
+  {
+    "id": "44",
+    "name": "Retailify",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://retailify.com",
+    "location": "Munich",
+    "categories": [
+      "Retail",
+      "E-commerce"
+    ],
+    "ctc_lpa": 18.41,
+    "base_inr": 1498964,
+    "criteria": "CPI > 8/10 and No Backlogs",
+    "roles": [
+      "UI/UX Designer"
+    ]
+  },
+  {
+    "id": "45",
+    "name": "EduStream",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://edustream.com",
+    "location": "Athens",
+    "categories": [
+      "Education",
+      "Tech"
+    ],
+    "ctc_lpa": 12.76,
+    "base_inr": 357688,
+    "criteria": "CPI > 8/10 and No Backlogs",
+    "roles": [
+      "Product Manager",
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "46",
+    "name": "FarmGrid",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://farmgrid.com",
+    "location": "Kuala Lumpur",
+    "categories": [
+      "Agriculture",
+      "Tech"
+    ],
+    "ctc_lpa": 5.57,
+    "base_inr": 1974240,
+    "criteria": "No Backlogs",
+    "roles": [
+      "Product Manager",
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "47",
+    "name": "CleanTech",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://cleantech.com",
+    "location": "Warsaw",
+    "categories": [
+      "Tech",
+      "Environment"
+    ],
+    "ctc_lpa": 29.68,
+    "base_inr": 692587,
+    "criteria": "CPI > 7/10",
+    "roles": [
+      "Software Developer",
+      "Product Manager"
+    ]
+  },
+  {
+    "id": "48",
+    "name": "Innovative Retail",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://innovativeretail.com",
+    "location": "Dubai",
+    "categories": [
+      "Retail",
+      "Tech"
+    ],
+    "ctc_lpa": 6.09,
+    "base_inr": 545698,
+    "criteria": "No active backlogs",
+    "roles": [
+      "Business Analyst",
+      "Data Analyst"
+    ]
+  },
+  {
+    "id": "49",
+    "name": "AutoFast",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://autofast.com",
+    "location": "Los Angeles",
+    "categories": [
+      "Automotive",
+      "Tech"
+    ],
+    "ctc_lpa": 16.17,
+    "base_inr": 752136,
+    "criteria": "No Backlogs",
+    "roles": [
+      "Business Analyst"
+    ]
+  },
+  {
+    "id": "50",
+    "name": "HealthSphere",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://healthsphere.com",
+    "location": "Chicago",
+    "categories": [
+      "Healthcare",
+      "Tech"
+    ],
+    "ctc_lpa": 18.21,
+    "base_inr": 1947322,
+    "criteria": "CPI > 7.5/10",
+    "roles": [
+      "Data Analyst"
+    ]
+  },
+  {
+    "id": "51",
+    "name": "ElearnPro",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://elearnpro.com",
+    "location": "London",
+    "categories": [
+      "Education",
+      "Tech"
+    ],
+    "ctc_lpa": 12,
+    "base_inr": 368923,
+    "criteria": "CPI > 7.5/10",
+    "roles": [
+      "Software Developer",
+      "Product Manager"
+    ]
+  },
+  {
+    "id": "52",
+    "name": "CloudNet",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://cloudnet.com",
+    "location": "Seattle",
+    "categories": [
+      "Cloud",
+      "Tech"
+    ],
+    "ctc_lpa": 14.34,
+    "base_inr": 1456565,
+    "criteria": "CPI > 8/10 and No Backlogs",
+    "roles": [
+      "Data Analyst"
+    ]
+  },
+  {
+    "id": "53",
+    "name": "RetailPulse",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://retailpulse.com",
+    "location": "Zurich",
+    "categories": [
+      "Retail",
+      "Analytics"
+    ],
+    "ctc_lpa": 4.39,
+    "base_inr": 1518239,
+    "criteria": "No Backlogs for last 2 years",
+    "roles": [
+      "Product Manager"
+    ]
+  },
+  {
+    "id": "54",
+    "name": "PowerUp",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://powerup.com",
+    "location": "San Francisco",
+    "categories": [
+      "Energy",
+      "Tech"
+    ],
+    "ctc_lpa": 13.69,
+    "base_inr": 706893,
+    "criteria": "No active backlogs",
+    "roles": [
+      "Business Analyst",
+      "Associate Software Engineer",
+      "Data Analyst"
+    ]
+  },
+  {
+    "id": "55",
+    "name": "AgroWave",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://agrowave.com",
+    "location": "Berlin",
+    "categories": [
+      "Agriculture",
+      "Tech"
+    ],
+    "ctc_lpa": 29.76,
+    "base_inr": 1864486,
+    "criteria": "No active backlogs",
+    "roles": [
+      "Business Analyst",
+      "UI/UX Designer",
+      "Software Developer"
+    ]
+  },
+  {
+    "id": "56",
+    "name": "TravelWise",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://travelwise.com",
+    "location": "Paris",
+    "categories": [
+      "Travel",
+      "Tech"
+    ],
+    "ctc_lpa": 14.4,
+    "base_inr": 1639362,
+    "criteria": "CPI > 6.5/10",
+    "roles": [
+      "Associate Software Engineer"
+    ]
+  },
+  {
+    "id": "57",
+    "name": "AutoFlow",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://autoflow.com",
+    "location": "Tokyo",
+    "categories": [
+      "Automotive",
+      "Tech"
+    ],
+    "ctc_lpa": 23.24,
+    "base_inr": 323943,
+    "criteria": "CPI > 8/10 and No Backlogs",
+    "roles": [
+      "UI/UX Designer"
+    ]
+  },
+  {
+    "id": "58",
+    "name": "GreenWorld",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://greenworld.com",
+    "location": "New York",
+    "categories": [
+      "Environment",
+      "Tech"
+    ],
+    "ctc_lpa": 26.26,
+    "base_inr": 550570,
+    "criteria": "No active backlogs",
+    "roles": [
+      "Associate Software Engineer"
+    ]
+  },
+  {
+    "id": "59",
+    "name": "HealthSync",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://healthsync.com",
+    "location": "Sydney",
+    "categories": [
+      "Healthcare",
+      "Tech"
+    ],
+    "ctc_lpa": 4.58,
+    "base_inr": 881725,
+    "criteria": "CPI > 7/10",
+    "roles": [
+      "DevOps Engineer",
+      "Data Analyst",
+      "Associate Software Engineer"
+    ]
+  },
+  {
+    "id": "60",
+    "name": "FinBox",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://finbox.com",
+    "location": "Austin",
+    "categories": [
+      "Finance",
+      "Tech"
+    ],
+    "ctc_lpa": 16.93,
+    "base_inr": 1519816,
+    "criteria": "CPI > 8/10 and No Backlogs",
+    "roles": [
+      "UI/UX Designer",
+      "Business Analyst",
+      "Product Manager"
+    ]
+  },
+  {
+    "id": "61",
+    "name": "RetailExperts",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://retailexperts.com",
+    "location": "Vancouver",
+    "categories": [
+      "Retail",
+      "Tech"
+    ],
+    "ctc_lpa": 21.45,
+    "base_inr": 1389457,
+    "criteria": "No Backlogs",
+    "roles": [
+      "Business Analyst",
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "62",
+    "name": "TravelSmart",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://travelsmart.com",
+    "location": "Hong Kong",
+    "categories": [
+      "Travel",
+      "Tech"
+    ],
+    "ctc_lpa": 6.56,
+    "base_inr": 315777,
+    "criteria": "No Backlogs for last 2 years",
+    "roles": [
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "63",
+    "name": "AutoPrime",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://autoprime.com",
+    "location": "Los Angeles",
+    "categories": [
+      "Automotive",
+      "Tech"
+    ],
+    "ctc_lpa": 9.66,
+    "base_inr": 358612,
+    "criteria": "CPI > 7.5/10",
+    "roles": [
+      "Associate Software Engineer"
+    ]
+  },
+  {
+    "id": "64",
+    "name": "Medix",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://medix.com",
+    "location": "Geneva",
+    "categories": [
+      "Healthcare",
+      "Tech"
+    ],
+    "ctc_lpa": 29.87,
+    "base_inr": 1887646,
+    "criteria": "CPI > 8/10 and No Backlogs",
+    "roles": [
+      "Data Analyst",
+      "Business Analyst",
+      "UI/UX Designer"
+    ]
+  },
+  {
+    "id": "65",
+    "name": "FoodLink",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://foodlink.com",
+    "location": "Toronto",
+    "categories": [
+      "Food",
+      "Tech"
+    ],
+    "ctc_lpa": 19.49,
+    "base_inr": 1978736,
+    "criteria": "CPI > 7/10",
+    "roles": [
+      "UI/UX Designer",
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "66",
+    "name": "EduRise",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://edurise.com",
+    "location": "San Diego",
+    "categories": [
+      "Education",
+      "Tech"
+    ],
+    "ctc_lpa": 20.22,
+    "base_inr": 1736367,
+    "criteria": "No Backlogs",
+    "roles": [
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "67",
+    "name": "CloudWorks",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://cloudworks.com",
+    "location": "Berlin",
+    "categories": [
+      "Cloud",
+      "Tech"
+    ],
+    "ctc_lpa": 28.95,
+    "base_inr": 1267240,
+    "criteria": "CPI > 9/10",
+    "roles": [
+      "Product Manager",
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "68",
+    "name": "RetailGrowth",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://retailgrowth.com",
+    "location": "Sydney",
+    "categories": [
+      "Retail",
+      "Tech"
+    ],
+    "ctc_lpa": 20.06,
+    "base_inr": 558214,
+    "criteria": "No Backlogs",
+    "roles": [
+      "Product Manager",
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "69",
+    "name": "EnergyPlus",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://energyplus.com",
+    "location": "Zurich",
+    "categories": [
+      "Energy",
+      "Renewable"
+    ],
+    "ctc_lpa": 16.53,
+    "base_inr": 1626413,
+    "criteria": "CPI > 9/10",
+    "roles": [
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "70",
+    "name": "TechAcademy",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://techacademy.com",
+    "location": "New Delhi",
+    "categories": [
+      "Education",
+      "Tech"
+    ],
+    "ctc_lpa": 28.29,
+    "base_inr": 1592467,
+    "criteria": "CPI > 9/10",
+    "roles": [
+      "Data Analyst",
+      "UI/UX Designer",
+      "Product Manager"
+    ]
+  },
+  {
+    "id": "71",
+    "name": "FoodFlow",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://foodflow.com",
+    "location": "New York",
+    "categories": [
+      "Food",
+      "Delivery"
+    ],
+    "ctc_lpa": 12.34,
+    "base_inr": 823801,
+    "criteria": "No active backlogs",
+    "roles": [
+      "Business Analyst"
+    ]
+  },
+  {
+    "id": "72",
+    "name": "AutoMotion",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://automotion.com",
+    "location": "Berlin",
+    "categories": [
+      "Automotive",
+      "Tech"
+    ],
+    "ctc_lpa": 10.86,
+    "base_inr": 759561,
+    "criteria": "CPI > 8/10 and No Backlogs",
+    "roles": [
+      "DevOps Engineer",
+      "Associate Software Engineer"
+    ]
+  },
+  {
+    "id": "73",
+    "name": "EcoLife",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://ecolife.com",
+    "location": "San Francisco",
+    "categories": [
+      "Environment",
+      "Tech"
+    ],
+    "ctc_lpa": 13.71,
+    "base_inr": 1461677,
+    "criteria": "CPI > 7/10",
+    "roles": [
+      "Product Manager"
+    ]
+  },
+  {
+    "id": "74",
+    "name": "FarmFlow",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://farmflow.com",
+    "location": "Nairobi",
+    "categories": [
+      "Agriculture",
+      "Tech"
+    ],
+    "ctc_lpa": 23.65,
+    "base_inr": 636076,
+    "criteria": "No Backlogs",
+    "roles": [
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "75",
+    "name": "PowerHouse",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://powerhouse.com",
+    "location": "New York",
+    "categories": [
+      "Energy",
+      "Tech"
+    ],
+    "ctc_lpa": 27.87,
+    "base_inr": 415105,
+    "criteria": "No Backlogs for last 2 years",
+    "roles": [
+      "Software Developer",
+      "Data Analyst",
+      "Business Analyst"
+    ]
+  },
+  {
+    "id": "76",
+    "name": "TechFlow",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://techflow.com",
+    "location": "San Francisco",
+    "categories": [
+      "Tech",
+      "Software"
+    ],
+    "ctc_lpa": 21.52,
+    "base_inr": 1155579,
+    "criteria": "CPI > 6.5/10",
+    "roles": [
+      "Data Analyst",
+      "UI/UX Designer"
+    ]
+  },
+  {
+    "id": "77",
+    "name": "SecureTech",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://securetech.com",
+    "location": "Tokyo",
+    "categories": [
+      "Security",
+      "Tech"
+    ],
+    "ctc_lpa": 28.33,
+    "base_inr": 637452,
+    "criteria": "CPI > 8/10 and No Backlogs",
+    "roles": [
+      "Data Analyst"
+    ]
+  },
+  {
+    "id": "78",
+    "name": "RetailMind",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://retailmind.com",
+    "location": "Paris",
+    "categories": [
+      "Retail",
+      "Tech"
+    ],
+    "ctc_lpa": 11.19,
+    "base_inr": 908139,
+    "criteria": "No Backlogs",
+    "roles": [
+      "UI/UX Designer"
+    ]
+  },
+  {
+    "id": "79",
+    "name": "CloudForce",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://cloudforce.com",
+    "location": "Amsterdam",
+    "categories": [
+      "Cloud",
+      "Tech"
+    ],
+    "ctc_lpa": 26.78,
+    "base_inr": 1515425,
+    "criteria": "No active backlogs",
+    "roles": [
+      "Associate Software Engineer"
+    ]
+  },
+  {
+    "id": "80",
+    "name": "AutoPower",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://autopower.com",
+    "location": "New Delhi",
+    "categories": [
+      "Automotive",
+      "Tech"
+    ],
+    "ctc_lpa": 12.28,
+    "base_inr": 704581,
+    "criteria": "No active backlogs",
+    "roles": [
+      "Business Analyst",
+      "UI/UX Designer"
+    ]
+  },
+  {
+    "id": "81",
+    "name": "FoodCircle",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://foodcircle.com",
+    "location": "Mexico City",
+    "categories": [
+      "Food",
+      "Tech"
+    ],
+    "ctc_lpa": 9.02,
+    "base_inr": 1443395,
+    "criteria": "No Backlogs for last 2 years",
+    "roles": [
+      "Business Analyst",
+      "UI/UX Designer",
+      "Software Developer"
+    ]
+  },
+  {
+    "id": "82",
+    "name": "AutoInnovation",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://autoinnovation.com",
+    "location": "Cape Town",
+    "categories": [
+      "Automotive",
+      "Tech"
+    ],
+    "ctc_lpa": 5.82,
+    "base_inr": 870937,
+    "criteria": "No Backlogs for last 2 years",
+    "roles": [
+      "Product Manager"
+    ]
+  },
+  {
+    "id": "83",
+    "name": "CleanTech Labs",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://cleantechlabs.com",
+    "location": "Copenhagen",
+    "categories": [
+      "Environment",
+      "Tech"
+    ],
+    "ctc_lpa": 20.58,
+    "base_inr": 947687,
+    "criteria": "CPI > 9/10",
+    "roles": [
+      "UI/UX Designer"
+    ]
+  },
+  {
+    "id": "84",
+    "name": "AutoPilot",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://autopilot.com",
+    "location": "Milan",
+    "categories": [
+      "Automotive",
+      "Tech"
+    ],
+    "ctc_lpa": 27.08,
+    "base_inr": 658898,
+    "criteria": "CPI > 9/10",
+    "roles": [
+      "DevOps Engineer",
+      "Business Analyst"
+    ]
+  },
+  {
+    "id": "85",
+    "name": "PowerTech",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://powertech.com",
+    "location": "Beijing",
+    "categories": [
+      "Energy",
+      "Tech"
+    ],
+    "ctc_lpa": 12.88,
+    "base_inr": 589036,
+    "criteria": "No active backlogs",
+    "roles": [
+      "Data Analyst"
+    ]
+  },
+  {
+    "id": "86",
+    "name": "RetailLink",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://retaillink.com",
+    "location": "Brussels",
+    "categories": [
+      "Retail",
+      "Tech"
+    ],
+    "ctc_lpa": 15.53,
+    "base_inr": 501967,
+    "criteria": "CPI > 7.5/10",
+    "roles": [
+      "UI/UX Designer",
+      "Product Manager",
+      "Data Analyst"
+    ]
+  },
+  {
+    "id": "87",
+    "name": "CloudPrime",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://cloudprime.com",
+    "location": "Singapore",
+    "categories": [
+      "Cloud",
+      "Tech"
+    ],
+    "ctc_lpa": 21.11,
+    "base_inr": 1750827,
+    "criteria": "CPI > 8/10 and No Backlogs",
+    "roles": [
+      "Business Analyst"
+    ]
+  },
+  {
+    "id": "88",
+    "name": "CleanEnergy Labs",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://cleanenergylabs.com",
+    "location": "Lisbon",
+    "categories": [
+      "Energy",
+      "Renewable"
+    ],
+    "ctc_lpa": 13.51,
+    "base_inr": 988472,
+    "criteria": "CPI > 8/10 and No Backlogs",
+    "roles": [
+      "Associate Software Engineer",
+      "Business Analyst"
+    ]
+  },
+  {
+    "id": "89",
+    "name": "TechWave",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://techwave.com",
+    "location": "New York",
+    "categories": [
+      "Tech",
+      "Software",
+      "AI"
+    ],
+    "ctc_lpa": 19.72,
+    "base_inr": 540615,
+    "criteria": "No active backlogs",
+    "roles": [
+      "DevOps Engineer"
+    ]
+  },
+  {
+    "id": "90",
+    "name": "GreenPulse",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://greenpulse.com",
+    "location": "San Francisco",
+    "categories": [
+      "Energy",
+      "Environment",
+      "Renewable"
+    ],
+    "ctc_lpa": 12.95,
+    "base_inr": 1911305,
+    "criteria": "No Backlogs for last 2 years",
+    "roles": [
+      "Business Analyst"
+    ]
+  },
+  {
+    "id": "91",
+    "name": "EduLink",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://edulink.com",
+    "location": "London",
+    "categories": [
+      "Education",
+      "E-learning"
+    ],
+    "ctc_lpa": 14.74,
+    "base_inr": 359145,
+    "criteria": "No Backlogs",
+    "roles": [
+      "Software Developer",
+      "Business Analyst"
+    ]
+  },
+  {
+    "id": "92",
+    "name": "HealthCareX",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://healthcarex.com",
+    "location": "Berlin",
+    "categories": [
+      "Healthcare",
+      "Tech"
+    ],
+    "ctc_lpa": 29.11,
+    "base_inr": 917872,
+    "criteria": "CPI > 7/10",
+    "roles": [
+      "Data Analyst",
+      "UI/UX Designer"
+    ]
+  },
+  {
+    "id": "93",
+    "name": "EcoHarvest",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://ecoharvest.com",
+    "location": "Paris",
+    "categories": [
+      "Agriculture",
+      "Organic"
+    ],
+    "ctc_lpa": 13.8,
+    "base_inr": 1703653,
+    "criteria": "CPI > 9/10",
+    "roles": [
+      "Data Analyst"
+    ]
+  },
+  {
+    "id": "94",
+    "name": "CloudX",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://cloudx.com",
+    "location": "Seattle",
+    "categories": [
+      "Cloud",
+      "Software"
+    ],
+    "ctc_lpa": 14.14,
+    "base_inr": 1115477,
+    "criteria": "CPI > 6.5/10",
+    "roles": [
+      "Business Analyst",
+      "Software Developer"
+    ]
+  },
+  {
+    "id": "95",
+    "name": "FinTechPro",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://fintechpro.com",
+    "location": "Zurich",
+    "categories": [
+      "Finance",
+      "Banking"
+    ],
+    "ctc_lpa": 18.79,
+    "base_inr": 1040938,
+    "criteria": "No Backlogs for last 2 years",
+    "roles": [
+      "Associate Software Engineer",
+      "UI/UX Designer",
+      "Product Manager"
+    ]
+  },
+  {
+    "id": "96",
+    "name": "RetailTechX",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://retailtechx.com",
+    "location": "Tokyo",
+    "categories": [
+      "Retail",
+      "Tech"
+    ],
+    "ctc_lpa": 29.12,
+    "base_inr": 1109735,
+    "criteria": "CPI > 7.5/10",
+    "roles": [
+      "DevOps Engineer",
+      "Data Analyst"
+    ]
+  },
+  {
+    "id": "97",
+    "name": "AutoDriveX",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://autodrivex.com",
+    "location": "Los Angeles",
+    "categories": [
+      "Automotive",
+      "AI"
+    ],
+    "ctc_lpa": 8.04,
+    "base_inr": 1259852,
+    "criteria": "CPI > 6.5/10",
+    "roles": [
+      "Product Manager",
+      "DevOps Engineer",
+      "Software Developer"
+    ]
+  },
+  {
+    "id": "98",
+    "name": "FoodTechX",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://foodtechx.com",
+    "location": "Chicago",
+    "categories": [
+      "Food",
+      "Delivery"
+    ],
+    "ctc_lpa": 20.64,
+    "base_inr": 1781234,
+    "criteria": "CPI > 9/10",
+    "roles": [
+      "Product Manager"
+    ]
+  },
+  {
+    "id": "99",
+    "name": "TechAdvance",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://techadvance.com",
+    "location": "Boston",
+    "categories": [
+      "Software",
+      "AI",
+      "Tech"
+    ],
+    "ctc_lpa": 18.69,
+    "base_inr": 814049,
+    "criteria": "CPI > 6.5/10",
+    "roles": [
+      "UI/UX Designer",
+      "Business Analyst",
+      "Associate Software Engineer"
+    ]
+  },
+  {
+    "id": "100",
+    "name": "FinTechHub",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra orci odio, eu vestibulum nisi mattis nec. Integer sed accumsan enim. Mauris euismod at metus in pharetra. Curabitur volutpat mauris quis semper vestibulum. Sed varius, est id suscipit cursus, ante ante laoreet mi, eget interdum mi dui non sapien.",
+    "logoUrl": "https://via.placeholder.com/128x128/FFFFFF/000000",
+    "website": "https://fintechhub.com",
+    "location": "Austin",
+    "categories": [
+      "Finance",
+      "Tech"
+    ],
+    "ctc_lpa": 7.9,
+    "base_inr": 895559,
+    "criteria": "No active backlogs",
+    "roles": [
+      "Business Analyst"
+    ]
+  }
+]
