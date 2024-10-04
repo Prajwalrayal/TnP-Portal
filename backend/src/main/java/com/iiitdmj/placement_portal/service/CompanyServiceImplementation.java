@@ -45,7 +45,6 @@ public class CompanyServiceImplementation implements CompanyService {
     currentCompany.setDescription(company.getDescription());
     currentCompany.setWebsite(company.getWebsite());
 
-    // setSalary and setRolesOffered methods are not present in Company class
     currentCompany.setSalaries(company.getSalaries());
     currentCompany.setRolesOffered(company.getRolesOffered());
     return companyRepository.save(currentCompany);

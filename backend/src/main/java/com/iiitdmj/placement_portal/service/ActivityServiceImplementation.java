@@ -1,11 +1,11 @@
 package com.iiitdmj.placement_portal.service;
 
-import com.iiitdmj.placement_portal.dto.ActivityDTO;
-import com.iiitdmj.placement_portal.dto.ActivityLogDTO;
+import com.iiitdmj.placement_portal.dto.ActivityRequest;
+import com.iiitdmj.placement_portal.dto.ActivityLogRequest;
 import com.iiitdmj.placement_portal.dto.ActivityResponse;
 import com.iiitdmj.placement_portal.entity.Activity;
 import com.iiitdmj.placement_portal.entity.ActivityLog;
-import com.iiitdmj.placement_portal.entity.User.User;
+import com.iiitdmj.placement_portal.entity.User;
 import com.iiitdmj.placement_portal.repository.ActivityLogRepository;
 import com.iiitdmj.placement_portal.repository.ActivityRepository;
 import com.iiitdmj.placement_portal.repository.CompanyRepository;
@@ -36,17 +36,17 @@ public class ActivityServiceImplementation implements ActivityService {
     }
 
     @Override
-    public List<ActivityLog> getLogs(Integer id) {
+    public List<ActivityLog> getLogsByActivityId(Integer id) {
         return activityLogRepository.findByActivityId(id);
     }
 
     @Override
-    public ActivityLog addLog(ActivityLogDTO activityLogDTO) {
-        Activity activity = activityRepository.findById(activityLogDTO.getActivityId())
+    public ActivityLog addLog(ActivityLogRequest activityLogRequestDTO) {
+        Activity activity = activityRepository.findById(activityLogRequestDTO.getActivityId())
                 .orElseThrow(() -> new RuntimeException("Activity not found"));
 
         ActivityLog activityLog = new ActivityLog();
-        activityLog.setLog(activityLogDTO.getLog());
+        activityLog.setLog(activityLogRequestDTO.getLog());
         activityLog.setTimestamp(LocalDateTime.now());
         activityLog.setActivity(activity);
 
@@ -54,14 +54,14 @@ public class ActivityServiceImplementation implements ActivityService {
     }
 
     @Override
-    public ActivityResponse addActivity(ActivityDTO activityDTO) {
+    public ActivityResponse addActivity(ActivityRequest activityRequest) {
         Activity activity = new Activity();
-        activity.setStatus(activityDTO.getStatus());
-        activity.setDescription(activityDTO.getDescription());
-        activity.setCompany(companyRepository.findById(activityDTO
+        activity.setStatus(activityRequest.getStatus());
+        activity.setDescription(activityRequest.getDescription());
+        activity.setCompany(companyRepository.findById(activityRequest
                 .getCompanyId())
-                .orElseThrow(() -> new EntityNotFoundException("Company not found with id: " + activityDTO.getCompanyId())));
-        activity.setUser(userRepository.findByEmail(activityDTO.getUserEmail()));
+                .orElseThrow(() -> new EntityNotFoundException("Company not found with id: " + activityRequest.getCompanyId())));
+        activity.setUser(userRepository.findByEmail(activityRequest.getUserEmail()));
         activity.setCreatedAt(LocalDateTime.now());
         activity.setLastUpdated(LocalDateTime.now());
         activityRepository.save(activity);
@@ -87,7 +87,7 @@ public class ActivityServiceImplementation implements ActivityService {
     }
 
     @Override
-    public Activity updateActivity(ActivityDTO updateActivity, Integer id) {
+    public Activity updateActivity(ActivityRequest updateActivity, Integer id) {
         Activity currentActivity = activityRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Activity not found with id: " + id));
         currentActivity.setLastUpdated(LocalDateTime.now());

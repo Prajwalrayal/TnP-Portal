@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ActivityLogDTO {
+public class ActivityLogRequest {
     @NotNull
     private String log;
 

@@ -1,7 +1,7 @@
 package com.iiitdmj.placement_portal.service;
 
-import com.iiitdmj.placement_portal.dto.ActivityDTO;
-import com.iiitdmj.placement_portal.dto.ActivityLogDTO;
+import com.iiitdmj.placement_portal.dto.ActivityRequest;
+import com.iiitdmj.placement_portal.dto.ActivityLogRequest;
 import com.iiitdmj.placement_portal.dto.ActivityResponse;
 import com.iiitdmj.placement_portal.entity.Activity;
 import com.iiitdmj.placement_portal.entity.ActivityLog;
@@ -11,13 +11,13 @@ import java.util.List;
 
 @Service
 public interface ActivityService {
-    ActivityResponse addActivity(ActivityDTO activity);
+    ActivityResponse addActivity(ActivityRequest activity);
 
     List<ActivityResponse> getAllActivites();
 
-    Activity updateActivity(ActivityDTO updateActivity, Integer id);
+    Activity updateActivity(ActivityRequest updateActivity, Integer id);
 
-    ActivityLog addLog(ActivityLogDTO activityLogDTO);
+    ActivityLog addLog(ActivityLogRequest activityLogRequestDTO);
 
-    List<ActivityLog> getLogs(Integer id);
+    List<ActivityLog> getLogsByActivityId(Integer id);
 }

@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ActivityDTO {
+public class ActivityRequest {
     @NotNull
     private String description;
     @NotNull
