@@ -4,17 +4,15 @@ import com.iiitdmj.placement_portal.constants.UserRole;
 import com.iiitdmj.placement_portal.constants.Position;
 import com.iiitdmj.placement_portal.constants.Status;
 import com.iiitdmj.placement_portal.entity.*;
-import com.iiitdmj.placement_portal.entity.User.AdminRole;
-import com.iiitdmj.placement_portal.entity.User.StudentRole;
-import com.iiitdmj.placement_portal.entity.User.TprRole;
-import com.iiitdmj.placement_portal.entity.User.User;
+import com.iiitdmj.placement_portal.entity.User;
 import com.iiitdmj.placement_portal.repository.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -22,56 +20,45 @@ import java.util.List;
 @Configuration
 public class DatabaseSeeder {
 
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+
+    public DatabaseSeeder(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
+
     @Bean
     CommandLineRunner initDatabase(CompanyRepository companyRepository,
                                    ClientRepository clientRepository,
-                                   StudentRoleRepository studentRoleRepository,
-                                   TprRoleRepository tprRoleRepository,
-                                   AdminRoleRepository adminRoleRepository,
                                    ActivityRepository activityRepository,
                                    ActivityLogRepository activityLogRepository) {
 
         return args -> {
-            seedUsers(studentRoleRepository, tprRoleRepository, adminRoleRepository);
-            seedCompaniesClientsAndActivities(companyRepository, clientRepository, activityRepository, activityLogRepository, tprRoleRepository);
+            if(userRepository.count() == 0) {
+                seedUsers();
+            }
+            seedCompaniesClientsAndActivities(companyRepository, clientRepository, activityRepository, activityLogRepository, userRepository);
         };
     }
 
-    private void seedUsers(StudentRoleRepository studentRoleRepository,
-                           TprRoleRepository tprRoleRepository,
-                           AdminRoleRepository adminRoleRepository) {
-        if (studentRoleRepository.count() == 0) {
-            System.out.println("No students found. Seeding initial data...");
-            seedUser("john.doe@example.com", "John", "Doe", UserRole.STUDENT, "https://www.linkedin.com/in/johndoe", "password123", studentRoleRepository);
-        }
+    private void seedUsers() {
+        seedUser("john.doe@example.com", "John", "Doe", UserRole.STUDENT, "https://www.linkedin.com/in/johndoe", "password123", userRepository);
 
-        if (adminRoleRepository.count() == 0) {
-            System.out.println("No admins found. Seeding initial data...");
-            seedUser("admin@example.com", "Admin", "User", UserRole.ADMIN, "https://www.linkedin.com/in/adminuser", "adminpass", adminRoleRepository);
-        }
+        seedUser("admin@example.com", "Admin", "User", UserRole.ADMIN, "https://www.linkedin.com/in/adminuser", "adminpass", userRepository);
 
-        if (tprRoleRepository.count() == 0) {
-            System.out.println("No TPRs found. Seeding initial data...");
-            seedUser("tpr@example.com", "Tpr", "User", UserRole.TPR, "https://www.linkedin.com/in/tpruser", "tprpass", tprRoleRepository);
-        }
+        seedUser("tpr@example.com", "Tpr", "User", UserRole.TPR, "https://www.linkedin.com/in/tpruser", "tprpass", userRepository);
     }
 
-    private<T extends User> void seedUser(String email, String firstName, String lastName, UserRole role, String linkedinUrl, String password, JpaRepository<T, String> repository) {
-        T user;
-        if (role == UserRole.STUDENT) {
-            user = (T) new StudentRole();
-        } else if (role == UserRole.ADMIN) {
-            user = (T) new AdminRole();
-        } else {
-            user = (T) new TprRole();
-        }
+    private void seedUser(String email, String firstName, String lastName, UserRole role, String linkedinUrl, String password, UserRepository repository) {
+        User user = new User();
 
         user.setEmail(email);
         user.setFirstName(firstName);
         user.setLastName(lastName);
         user.setRole(role);
         user.setLinkedinUrl(linkedinUrl);
-        user.setPassword(password);
+        user.setPassword(passwordEncoder.encode(password));
         repository.save(user);
 
         System.out.println(role + " Role seeded");
@@ -81,8 +68,7 @@ public class DatabaseSeeder {
                                                    ClientRepository clientRepository,
                                                    ActivityRepository activityRepository,
                                                    ActivityLogRepository activityLogRepository,
-                                                   TprRoleRepository tprRoleRepository) throws Exception {
-
+                                                   UserRepository userRepository) throws MalformedURLException {
         if (companyRepository.count() != 0) {
             return;
         }
@@ -120,7 +106,7 @@ public class DatabaseSeeder {
         System.out.println(companyRepository.count() + " Companies seeded");
 
         seedClients(company1, company2, clientRepository);
-        seedActivities(company1, activityRepository, activityLogRepository, tprRoleRepository);
+        seedActivities(company1, activityRepository, activityLogRepository, userRepository);
     }
 
     private void seedClients(Company company1, Company company2, ClientRepository clientRepository) {
@@ -145,9 +131,9 @@ public class DatabaseSeeder {
     }
 
     private void seedActivities(Company company, ActivityRepository activityRepository,
-                                ActivityLogRepository activityLogRepository, TprRoleRepository tprRoleRepository) {
+                                ActivityLogRepository activityLogRepository, UserRepository userRepository) {
 
-        TprRole tpr = tprRoleRepository.findAll(PageRequest.of(0, 1)).stream().findFirst().orElseThrow(
+        User tpr = userRepository.findByRole(UserRole.TPR, PageRequest.of(0, 1)).stream().findFirst().orElseThrow(
                 () -> new IllegalStateException("No TPRs found to assign activities"));
 
         Activity activity1 = createActivity("Initial meeting", company, tpr, activityRepository);
@@ -160,7 +146,7 @@ public class DatabaseSeeder {
     }
 
 
-    private Activity createActivity(String description, Company company, TprRole user, ActivityRepository activityRepository) {
+    private Activity createActivity(String description, Company company, User user, ActivityRepository activityRepository) {
         Activity activity = new Activity();
         activity.setDescription(description);
         activity.setCompany(company);
