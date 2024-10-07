@@ -1,7 +1,7 @@
 package com.iiitdmj.placement_portal.controller;
 
-import com.iiitdmj.placement_portal.dto.ActivityDTO;
-import com.iiitdmj.placement_portal.dto.ActivityLogDTO;
+import com.iiitdmj.placement_portal.dto.ActivityRequest;
+import com.iiitdmj.placement_portal.dto.ActivityLogRequest;
 import com.iiitdmj.placement_portal.dto.ActivityResponse;
 import com.iiitdmj.placement_portal.entity.Activity;
 import com.iiitdmj.placement_portal.entity.ActivityLog;
@@ -30,23 +30,23 @@ public class ActivityController {
     }
 
     @PostMapping("")
-    public ActivityResponse addActivity(@Valid @RequestBody ActivityDTO activityDTO) {
-        return activityService.addActivity(activityDTO);
+    public ActivityResponse addActivity(@Valid @RequestBody ActivityRequest activityRequest) {
+        return activityService.addActivity(activityRequest);
     }
 
     @PutMapping("/{id}")
-    public Activity updateActivity(@Valid @RequestBody ActivityDTO activity, @PathVariable Integer id) {
+    public Activity updateActivity(@Valid @RequestBody ActivityRequest activity, @PathVariable Integer id) {
         return activityService.updateActivity(activity,id);
     }
 
     @PostMapping("/add-log")
-    public ActivityLog addLog(@Valid @RequestBody ActivityLogDTO activityLogDTO) {
-        return activityService.addLog(activityLogDTO);
+    public ActivityLog addLog(@Valid @RequestBody ActivityLogRequest activityLogRequestDTO) {
+        return activityService.addLog(activityLogRequestDTO);
     }
 
     @GetMapping("/logs/{id}")
-    public List<ActivityLog> getLogs(@PathVariable Integer id) {
-        return activityService.getLogs(id);
+    public List<ActivityLog> getLogsByActivityId(@PathVariable Integer id) {
+        return activityService.getLogsByActivityId(id);
     }
 
 

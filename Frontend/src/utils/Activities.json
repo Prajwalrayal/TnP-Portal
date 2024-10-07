@@ -1,0 +1,602 @@
+[
+  {
+    "id": 1,
+    "name": "Hackathon 2024",
+    "desc": "Annual hackathon event",
+    "student": "John Doe",
+    "status": "Confirmed",
+    "init_date": "2024-02-10T00:00:00.000Z",
+    "last_updated_on": "2024-01-15T00:00:00.000Z",
+    "logs": [{"2024-01-12": "Initial setup Confirmed"}]
+  },
+  {
+    "id": 2,
+    "name": "AI Workshop",
+    "desc": "Workshop on AI fundamentals",
+    "student": "Jane Smith",
+    "status": "Pending",
+    "init_date": "2024-01-05T00:00:00.000Z",
+    "last_updated_on": "2024-01-01T00:00:00.000Z",
+    "logs": [{"2023-12-30": "Materials preparation started"}]
+  },
+  {
+    "id": 3,
+    "name": "Tech Talk: Future of AI",
+    "desc": "Discussion on AI's future impact",
+    "student": "Alice Brown",
+    "status": "Confirmed",
+    "init_date": "2024-01-20T00:00:00.000Z",
+    "last_updated_on": "2024-01-25T00:00:00.000Z",
+    "logs": [{"2024-01-22": "Talk successfully conducted"}]
+  },
+  {
+    "id": 4,
+    "name": "Game Development Workshop",
+    "desc": "Hands-on workshop for game development",
+    "student": "Tom Harris",
+    "status": "Confirmed",
+    "init_date": "2024-02-15T00:00:00.000Z",
+    "last_updated_on": "2024-02-10T00:00:00.000Z",
+    "logs": [{"2024-02-08": "Participants finalized"}]
+  },
+  {
+    "id": 5,
+    "name": "Coding Bootcamp",
+    "desc": "Intensive coding training program",
+    "student": "Emma Lee",
+    "status": "Upcoming",
+    "init_date": "2024-03-10T00:00:00.000Z",
+    "last_updated_on": "2024-02-25T00:00:00.000Z",
+    "logs": [{"2024-02-20": "Bootcamp preparations ongoing"}]
+  },
+  {
+    "id": 6,
+    "name": "Cloud Computing Seminar",
+    "desc": "Cloud technologies overview",
+    "student": "James Kim",
+    "status": "Confirmed",
+    "init_date": "2024-04-01T00:00:00.000Z",
+    "last_updated_on": "2024-04-03T00:00:00.000Z",
+    "logs": [{"2024-03-25": "Seminar confirmed"}]
+  },
+  {
+    "id": 7,
+    "name": "Cybersecurity Basics",
+    "desc": "Introduction to cybersecurity concepts",
+    "student": "Lucas Johnson",
+    "status": "Confirmed",
+    "init_date": "2024-04-15T00:00:00.000Z",
+    "last_updated_on": "2024-04-12T00:00:00.000Z",
+    "logs": [{"2024-04-10": "Venue booked"}]
+  },
+  {
+    "id": 8,
+    "name": "AI & Machine Learning Expo",
+    "desc": "Showcase of AI/ML innovations",
+    "student": "Sophia Martinez",
+    "status": "Upcoming",
+    "init_date": "2024-05-20T00:00:00.000Z",
+    "last_updated_on": "2024-05-15T00:00:00.000Z",
+    "logs": [{"2024-05-10": "Expo setup started"}]
+  },
+  {
+    "id": 9,
+    "name": "Blockchain Workshop",
+    "desc": "Learn blockchain basics",
+    "student": "Oliver Davis",
+    "status": "Pending",
+    "init_date": "2024-06-10T00:00:00.000Z",
+    "last_updated_on": "2024-06-01T00:00:00.000Z",
+    "logs": [{"2024-05-30": "Speaker confirmed"}]
+  },
+  {
+    "id": 10,
+    "name": "Data Science Symposium",
+    "desc": "Exploring data science trends",
+    "student": "Liam Anderson",
+    "status": "Confirmed",
+    "init_date": "2024-06-15T00:00:00.000Z",
+    "last_updated_on": "2024-06-12T00:00:00.000Z",
+    "logs": [{"2024-06-10": "Agenda finalized"}]
+  },
+  {
+    "id": 11,
+    "name": "IoT Innovations",
+    "desc": "Insights into IoT advancements",
+    "student": "Mia Wilson",
+    "status": "Confirmed",
+    "init_date": "2024-07-01T00:00:00.000Z",
+    "last_updated_on": "2024-07-03T00:00:00.000Z",
+    "logs": [{"2024-06-29": "Session Confirmed"}]
+  },
+  {
+    "id": 12,
+    "name": "Robotics Workshop",
+    "desc": "Robotics training for beginners",
+    "student": "Charlotte Brown",
+    "status": "Upcoming",
+    "init_date": "2024-07-20T00:00:00.000Z",
+    "last_updated_on": "2024-07-15T00:00:00.000Z",
+    "logs": [{"2024-07-10": "Registrations full"}]
+  },
+  {
+    "id": 13,
+    "name": "Ethical Hacking Bootcamp",
+    "desc": "Learn ethical hacking techniques",
+    "student": "Amelia White",
+    "status": "Confirmed",
+    "init_date": "2024-08-10T00:00:00.000Z",
+    "last_updated_on": "2024-08-05T00:00:00.000Z",
+    "logs": [{"2024-08-01": "Pre-bootcamp materials sent"}]
+  },
+  {
+    "id": 14,
+    "name": "Quantum Computing Basics",
+    "desc": "Introductory course on quantum computing",
+    "student": "Ethan Moore",
+    "status": "Confirmed",
+    "init_date": "2024-09-20T00:00:00.000Z",
+    "last_updated_on": "2024-09-22T00:00:00.000Z",
+    "logs": [{"2024-09-18": "Quantum systems setup"}]
+  },
+  {
+    "id": 15,
+    "name": "Software Engineering Principles",
+    "desc": "Foundational course on software engineering",
+    "student": "Isabella Taylor",
+    "status": "Upcoming",
+    "init_date": "2024-10-05T00:00:00.000Z",
+    "last_updated_on": "2024-09-30T00:00:00.000Z",
+    "logs": [{"2024-09-25": "Course materials updated"}]
+  },
+  {
+    "id": 16,
+    "name": "AR/VR Development Workshop",
+    "desc": "AR/VR development hands-on training",
+    "student": "Elijah Scott",
+    "status": "Pending",
+    "init_date": "2024-10-15T00:00:00.000Z",
+    "last_updated_on": "2024-10-10T00:00:00.000Z",
+    "logs": [{"2024-10-08": "Tools setup in progress"}]
+  },
+  {
+    "id": 17,
+    "name": "Tech Entrepreneurship Summit",
+    "desc": "Summit on tech entrepreneurship",
+    "student": "Harper Thomas",
+    "status": "Confirmed",
+    "init_date": "2024-11-01T00:00:00.000Z",
+    "last_updated_on": "2024-10-28T00:00:00.000Z",
+    "logs": [{"2024-10-25": "Speakers confirmed"}]
+  },
+  {
+    "id": 18,
+    "name": "DevOps Workshop",
+    "desc": "Hands-on training on DevOps practices",
+    "student": "Daniel Lewis",
+    "status": "Confirmed",
+    "init_date": "2024-11-15T00:00:00.000Z",
+    "last_updated_on": "2024-11-20T00:00:00.000Z",
+    "logs": [{"2024-11-18": "Workshop successfully conducted"}]
+  },
+  {
+    "id": 19,
+    "name": "Advanced Python Programming",
+    "desc": "Advanced Python concepts and techniques",
+    "student": "Victoria Clark",
+    "status": "Upcoming",
+    "init_date": "2024-12-05T00:00:00.000Z",
+    "last_updated_on": "2024-11-30T00:00:00.000Z",
+    "logs": [{"2024-11-28": "Final adjustments made"}]
+  },
+  {
+    "id": 20,
+    "name": "UX/UI Design Bootcamp",
+    "desc": "Intensive bootcamp on UX/UI design",
+    "student": "Matthew Hill",
+    "status": "Pending",
+    "init_date": "2024-12-15T00:00:00.000Z",
+    "last_updated_on": "2024-12-10T00:00:00.000Z",
+    "logs": [{"2024-12-05": "Design mockups finalized"}]
+  },
+  {
+    "id": 21,
+    "name": "Digital Marketing Strategies",
+    "desc": "Explore advanced digital marketing techniques",
+    "student": "Scarlett Davis",
+    "status": "Upcoming",
+    "init_date": "2024-01-10T00:00:00.000Z",
+    "last_updated_on": "2024-01-05T00:00:00.000Z",
+    "logs": [{"2024-01-01": "Marketing strategies prepared"}]
+  },
+  {
+    "id": 22,
+    "name": "Intro to Cloud Architecture",
+    "desc": "Learn cloud architecture fundamentals",
+    "student": "James Evans",
+    "status": "Confirmed",
+    "init_date": "2024-02-01T00:00:00.000Z",
+    "last_updated_on": "2024-01-25T00:00:00.000Z",
+    "logs": [{"2024-01-20": "Preparation started"}]
+  },
+  {
+    "id": 23,
+    "name": "Full Stack Web Development",
+    "desc": "Full stack development crash course",
+    "student": "Emily Adams",
+    "status": "Pending",
+    "init_date": "2024-03-01T00:00:00.000Z",
+    "last_updated_on": "2024-02-25T00:00:00.000Z",
+    "logs": [{"2024-02-20": "Course materials ready"}]
+  },
+  {
+    "id": 24,
+    "name": "Mobile App Development",
+    "desc": "Building mobile applications",
+    "student": "John Carter",
+    "status": "Upcoming",
+    "init_date": "2024-04-01T00:00:00.000Z",
+    "last_updated_on": "2024-03-28T00:00:00.000Z",
+    "logs": [{"2024-03-25": "App framework setup"}]
+  },
+  {
+    "id": 25,
+    "name": "Database Management Systems",
+    "desc": "Introduction to DBMS concepts",
+    "student": "Sophia Baker",
+    "status": "Confirmed",
+    "init_date": "2024-05-01T00:00:00.000Z",
+    "last_updated_on": "2024-04-25T00:00:00.000Z",
+    "logs": [{"2024-04-20": "Databases configured"}]
+  },
+  {
+    "id": 26,
+    "name": "Tech Leadership Workshop",
+    "desc": "Develop leadership skills in tech",
+    "student": "Michael Brown",
+    "status": "Upcoming",
+    "init_date": "2024-05-20T00:00:00.000Z",
+    "last_updated_on": "2024-05-15T00:00:00.000Z",
+    "logs": [{"2024-05-10": "Speakers invited"}]
+  },
+  {
+    "id": 27,
+    "name": "AI in Healthcare",
+    "desc": "AI applications in the healthcare industry",
+    "student": "Anna Scott",
+    "status": "Pending",
+    "init_date": "2024-06-01T00:00:00.000Z",
+    "last_updated_on": "2024-05-28T00:00:00.000Z",
+    "logs": [{"2024-05-25": "Medical professionals on board"}]
+  },
+  {
+    "id": 28,
+    "name": "Big Data Analytics",
+    "desc": "Understanding big data tools and techniques",
+    "student": "Andrew Lee",
+    "status": "Confirmed",
+    "init_date": "2024-06-15T00:00:00.000Z",
+    "last_updated_on": "2024-06-20T00:00:00.000Z",
+    "logs": [{"2024-06-18": "Analytics lab session"}]
+  },
+  {
+    "id": 29,
+    "name": "Game Design Workshop",
+    "desc": "Game design and prototyping",
+    "student": "Sarah Turner",
+    "status": "Confirmed",
+    "init_date": "2024-07-01T00:00:00.000Z",
+    "last_updated_on": "2024-06-28T00:00:00.000Z",
+    "logs": [{"2024-06-25": "Workshop materials ready"}]
+  },
+  {
+    "id": 30,
+    "name": "Cloud Security Best Practices",
+    "desc": "Securing cloud environments",
+    "student": "Dylan Green",
+    "status": "Upcoming",
+    "init_date": "2024-07-10T00:00:00.000Z",
+    "last_updated_on": "2024-07-05T00:00:00.000Z",
+    "logs": [{"2024-07-01": "Security protocols prepared"}]
+  },
+  {
+    "id": 31,
+    "name": "AI and Robotics Meetup",
+    "desc": "Explore AI and robotics integration",
+    "student": "Olivia White",
+    "status": "Pending",
+    "init_date": "2024-07-20T00:00:00.000Z",
+    "last_updated_on": "2024-07-15T00:00:00.000Z",
+    "logs": [{"2024-07-12": "Robotics setup Confirmed"}]
+  },
+  {
+    "id": 32,
+    "name": "Web 3.0 and Blockchain",
+    "desc": "The future of decentralized web",
+    "student": "Ethan Johnson",
+    "status": "Confirmed",
+    "init_date": "2024-08-01T00:00:00.000Z",
+    "last_updated_on": "2024-07-25T00:00:00.000Z",
+    "logs": [{"2024-07-20": "Blockchain nodes configured"}]
+  },
+  {
+    "id": 33,
+    "name": "Quantum Cryptography",
+    "desc": "Introduction to quantum encryption",
+    "student": "Lily Evans",
+    "status": "Confirmed",
+    "init_date": "2024-08-10T00:00:00.000Z",
+    "last_updated_on": "2024-08-15T00:00:00.000Z",
+    "logs": [{"2024-08-12": "Encryption demo"}]
+  },
+  {
+    "id": 34,
+    "name": "Data Science for Beginners",
+    "desc": "Introduction to data science tools",
+    "student": "Mason Parker",
+    "status": "Upcoming",
+    "init_date": "2024-09-01T00:00:00.000Z",
+    "last_updated_on": "2024-08-28T00:00:00.000Z",
+    "logs": [{"2024-08-25": "Dataset preparation Confirmed"}]
+  },
+  {
+    "id": 35,
+    "name": "Blockchain in Finance",
+    "desc": "Blockchain applications in the financial sector",
+    "student": "Sophie Taylor",
+    "status": "Confirmed",
+    "init_date": "2024-09-10T00:00:00.000Z",
+    "last_updated_on": "2024-09-05T00:00:00.000Z",
+    "logs": [{"2024-09-01": "Financial experts confirmed"}]
+  },
+  {
+    "id": 36,
+    "name": "AI in Space Exploration",
+    "desc": "How AI is transforming space missions",
+    "student": "Jack Wilson",
+    "status": "Pending",
+    "init_date": "2024-09-20T00:00:00.000Z",
+    "last_updated_on": "2024-09-15T00:00:00.000Z",
+    "logs": [{"2024-09-12": "NASA collaboration finalized"}]
+  },
+  {
+    "id": 37,
+    "name": "Digital Transformation Summit",
+    "desc": "Embracing digital transformation",
+    "student": "Amelia Wright",
+    "status": "Upcoming",
+    "init_date": "2024-10-01T00:00:00.000Z",
+    "last_updated_on": "2024-09-25T00:00:00.000Z",
+    "logs": [{"2024-09-22": "Speakers confirmed"}]
+  },
+  {
+    "id": 38,
+    "name": "DevOps for Beginners",
+    "desc": "Introduction to DevOps practices",
+    "student": "Noah Martinez",
+    "status": "Confirmed",
+    "init_date": "2024-10-10T00:00:00.000Z",
+    "last_updated_on": "2024-10-15T00:00:00.000Z",
+    "logs": [{"2024-10-12": "Hands-on session conducted"}]
+  },
+  {
+    "id": 39,
+    "name": "Cybersecurity for Startups",
+    "desc": "Cybersecurity essentials for startups",
+    "student": "Sophia Brown",
+    "status": "Pending",
+    "init_date": "2024-10-20T00:00:00.000Z",
+    "last_updated_on": "2024-10-18T00:00:00.000Z",
+    "logs": [{"2024-10-15": "Vulnerability assessment"}]
+  },
+  {
+    "id": 40,
+    "name": "Intro to AI Ethics",
+    "desc": "Explore ethical implications of AI",
+    "student": "William Clark",
+    "status": "Confirmed",
+    "init_date": "2024-11-01T00:00:00.000Z",
+    "last_updated_on": "2024-10-25T00:00:00.000Z",
+    "logs": [{"2024-10-20": "Ethics panel invited"}]
+  },
+  {
+    "id": 41,
+    "name": "Machine Learning in IoT",
+    "desc": "AI and ML in IoT systems",
+    "student": "Liam Robinson",
+    "status": "Upcoming",
+    "init_date": "2024-11-10T00:00:00.000Z",
+    "last_updated_on": "2024-11-05T00:00:00.000Z",
+    "logs": [{"2024-11-02": "IoT sensors configured"}]
+  },
+  {
+    "id": 42,
+    "name": "Mobile App UX/UI Design",
+    "desc": "User experience design for mobile apps",
+    "student": "Emily Harris",
+    "status": "Pending",
+    "init_date": "2024-11-20T00:00:00.000Z",
+    "last_updated_on": "2024-11-15T00:00:00.000Z",
+    "logs": [{"2024-11-10": "App design workshop planned"}]
+  },
+  {
+    "id": 43,
+    "name": "Python for Data Science",
+    "desc": "Learn Python for data science applications",
+    "student": "Charlotte Campbell",
+    "status": "Confirmed",
+    "init_date": "2024-12-01T00:00:00.000Z",
+    "last_updated_on": "2024-11-25T00:00:00.000Z",
+    "logs": [{"2024-11-20": "Python lab setup"}]
+  },
+  {
+    "id": 44,
+    "name": "Tech for Social Good",
+    "desc": "Using technology for societal impact",
+    "student": "Grace Thompson",
+    "status": "Confirmed",
+    "init_date": "2024-12-10T00:00:00.000Z",
+    "last_updated_on": "2024-12-15T00:00:00.000Z",
+    "logs": [{"2024-12-12": "Social impact projects launched"}]
+  },
+  {
+    "id": 45,
+    "name": "Advanced AI Programming",
+    "desc": "Advanced techniques in AI development",
+    "student": "James King",
+    "status": "Upcoming",
+    "init_date": "2024-12-20T00:00:00.000Z",
+    "last_updated_on": "2024-12-15T00:00:00.000Z",
+    "logs": [{"2024-12-12": "AI lab setup started"}]
+  },
+  {
+    "id": 46,
+    "name": "Blockchain for Supply Chain",
+    "desc": "Blockchain technology in supply chain management",
+    "student": "Emma Miller",
+    "status": "Pending",
+    "init_date": "2025-01-01T00:00:00.000Z",
+    "last_updated_on": "2024-12-25T00:00:00.000Z",
+    "logs": [{"2024-12-22": "Supply chain experts invited"}]
+  },
+  {
+    "id": 47,
+    "name": "Tech in Education",
+    "desc": "How technology is revolutionizing education",
+    "student": "Noah Evans",
+    "status": "Confirmed",
+    "init_date": "2025-01-10T00:00:00.000Z",
+    "last_updated_on": "2025-01-05T00:00:00.000Z",
+    "logs": [{"2025-01-01": "Educational tools prepared"}]
+  },
+  {
+    "id": 48,
+    "name": "Wearable Tech Innovations",
+    "desc": "Exploring the future of wearable technology",
+    "student": "Olivia Anderson",
+    "status": "Upcoming",
+    "init_date": "2025-02-01T00:00:00.000Z",
+    "last_updated_on": "2025-01-25T00:00:00.000Z",
+    "logs": [{"2025-01-20": "Wearables tech demo ready"}]
+  },
+  {
+    "id": 49,
+    "name": "Tech Careers 101",
+    "desc": "Career guidance for tech students",
+    "student": "William Perez",
+    "status": "Pending",
+    "init_date": "2025-02-10T00:00:00.000Z",
+    "last_updated_on": "2025-02-05T00:00:00.000Z",
+    "logs": [{"2025-02-01": "Career resources distributed"}]
+  },
+  {
+    "id": 50,
+    "name": "AI and Cybersecurity",
+    "desc": "AI applications in cybersecurity",
+    "student": "Harper Turner",
+    "status": "Confirmed",
+    "init_date": "2025-02-15T00:00:00.000Z",
+    "last_updated_on": "2025-02-20T00:00:00.000Z",
+    "logs": [{"2025-02-18": "AI cybersecurity model demo"}]
+  },
+  {
+    "id": 51,
+    "name": "Augmented Reality Workshop",
+    "desc": "AR development techniques",
+    "student": "Ethan Lee",
+    "status": "Upcoming",
+    "init_date": "2025-03-01T00:00:00.000Z",
+    "last_updated_on": "2025-02-25T00:00:00.000Z",
+    "logs": [{"2025-02-20": "AR setup Confirmed"}]
+  },
+  {
+    "id": 52,
+    "name": "AI for Social Impact",
+    "desc": "AI solutions for global issues",
+    "student": "Grace Davis",
+    "status": "Pending",
+    "init_date": "2025-03-10T00:00:00.000Z",
+    "last_updated_on": "2025-03-05T00:00:00.000Z",
+    "logs": [{"2025-03-01": "Social impact problem set finalized"}]
+  },
+  {
+    "id": 53,
+    "name": "Cybersecurity Best Practices",
+    "desc": "Industry best practices for cybersecurity",
+    "student": "Emily Taylor",
+    "status": "Confirmed",
+    "init_date": "2025-03-15T00:00:00.000Z",
+    "last_updated_on": "2025-03-10T00:00:00.000Z",
+    "logs": [{"2025-03-05": "Cybersecurity experts confirmed"}]
+  },
+  {
+    "id": 54,
+    "name": "Ethics in Tech",
+    "desc": "Discussion on ethics in technology",
+    "student": "Benjamin Moore",
+    "status": "Confirmed",
+    "init_date": "2025-04-01T00:00:00.000Z",
+    "last_updated_on": "2025-04-05T00:00:00.000Z",
+    "logs": [{"2025-04-02": "Panel discussion concluded"}]
+  },
+  {
+    "id": 55,
+    "name": "Machine Learning Advanced Topics",
+    "desc": "Advanced techniques in machine learning",
+    "student": "Lily Martinez",
+    "status": "Upcoming",
+    "init_date": "2025-04-10T00:00:00.000Z",
+    "last_updated_on": "2025-04-05T00:00:00.000Z",
+    "logs": [{"2025-04-03": "ML lab prepared"}]
+  },
+  {
+    "id": 56,
+    "name": "Blockchain Security",
+    "desc": "Securing blockchain networks",
+    "student": "Daniel Lewis",
+    "status": "Pending",
+    "init_date": "2025-04-20T00:00:00.000Z",
+    "last_updated_on": "2025-04-15T00:00:00.000Z",
+    "logs": [{"2025-04-12": "Blockchain security guidelines drafted"}]
+  },
+  {
+    "id": 57,
+    "name": "Quantum Computing Advanced",
+    "desc": "Deep dive into quantum computing algorithms",
+    "student": "Ava Johnson",
+    "status": "Upcoming",
+    "init_date": "2025-05-01T00:00:00.000Z",
+    "last_updated_on": "2025-04-25T00:00:00.000Z",
+    "logs": [{"2025-04-22": "Quantum lab setup Confirmed"}]
+  },
+  {
+    "id": 58,
+    "name": "AI in Healthcare",
+    "desc": "Exploring AI applications in the healthcare sector",
+    "student": "Lucas Brown",
+    "status": "Pending",
+    "init_date": "2025-05-10T00:00:00.000Z",
+    "last_updated_on": "2025-05-05T00:00:00.000Z",
+    "logs": [{"2025-05-01": "Healthcare case studies prepared"}]
+  },
+  {
+    "id": 59,
+    "name": "VR in Education",
+    "desc": "Virtual reality tools for enhanced learning",
+    "student": "Mia Wilson",
+    "status": "Confirmed",
+    "init_date": "2025-05-15T00:00:00.000Z",
+    "last_updated_on": "2025-05-10T00:00:00.000Z",
+    "logs": [{"2025-05-08": "VR demo content created"}]
+  },
+  {
+    "id": 60,
+    "name": "Tech and Sustainability",
+    "desc": "How technology can support sustainability",
+    "student": "Liam Anderson",
+    "status": "Confirmed",
+    "init_date": "2025-06-01T00:00:00.000Z",
+    "last_updated_on": "2025-06-05T00:00:00.000Z",
+    "logs": [{"2025-06-03": "Sustainability panel discussion held"}]
+  }
+]

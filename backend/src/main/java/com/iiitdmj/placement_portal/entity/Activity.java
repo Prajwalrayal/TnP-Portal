@@ -3,7 +3,6 @@ package com.iiitdmj.placement_portal.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.iiitdmj.placement_portal.constants.Status;
-import com.iiitdmj.placement_portal.entity.User.User;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
