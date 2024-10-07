@@ -2,7 +2,6 @@ package com.iiitdmj.placement_portal.controller;
 
 import com.iiitdmj.placement_portal.dto.AuthRequest;
 import com.iiitdmj.placement_portal.dto.AuthResponse;
-import com.iiitdmj.placement_portal.entity.User;
 import com.iiitdmj.placement_portal.service.UserDetailsServiceImpl;
 import com.iiitdmj.placement_portal.util.JwtUtil;
 import jakarta.validation.Valid;

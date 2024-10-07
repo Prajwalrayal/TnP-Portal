@@ -1,6 +1,7 @@
 package com.iiitdmj.placement_portal.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.iiitdmj.placement_portal.constants.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,9 +31,20 @@ public class User {
     @NonNull
     private String password;
 
-    @Column(nullable = false)
+    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
     @Column(nullable = false)
     private LocalDateTime lastLoginAt;
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now();
+        lastLoginAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        lastLoginAt = LocalDateTime.now();
+    }
 }

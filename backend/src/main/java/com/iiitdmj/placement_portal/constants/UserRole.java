@@ -1,4 +1,4 @@
-package com.iiitdmj.placement_portal.entity;
+package com.iiitdmj.placement_portal.constants;
 
 public enum UserRole {
     STUDENT,

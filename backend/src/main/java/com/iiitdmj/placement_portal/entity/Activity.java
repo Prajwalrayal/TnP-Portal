@@ -2,15 +2,14 @@ package com.iiitdmj.placement_portal.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.iiitdmj.placement_portal.constants.Status;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
@@ -28,6 +27,7 @@ public class Activity {
 
     @ManyToOne
     @JoinColumn(name = "user_email")
+    @JsonIgnore
     private User user;
 
     @ManyToOne
@@ -39,9 +39,6 @@ public class Activity {
     private Status status;
     private LocalDateTime createdAt;
     private LocalDateTime lastUpdated;
-
-    @ElementCollection
-    private List<String> logs;
 
 }
 
