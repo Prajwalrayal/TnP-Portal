@@ -54,6 +54,7 @@ const ActivityCard: React.FC<Activity> = ({
     pendingLogUpdate,
     logUpdateError,
   } = useAppSelector((state) => state.activities);
+  const { user } = useAppSelector((state) => state.user);
 
   const handleToggleLogs = () => {
     setIsExpanded(!isExpanded);
@@ -88,7 +89,13 @@ const ActivityCard: React.FC<Activity> = ({
         }
 
         const updatedLogsFromAPI = await response.json();
-        dispatch(updateActivityLogs({ id, logs: updatedLogsFromAPI }));
+        dispatch(
+          updateActivityLogs({
+            id,
+            logs: updatedLogsFromAPI,
+            token: user.token,
+          })
+        );
         setIsExpanded(false);
       } else {
         toastError("Logs must be an array of objects of type {date: message}.");
@@ -155,7 +162,13 @@ const ActivityCard: React.FC<Activity> = ({
       last_updated_on: new Date(),
     };
 
-    dispatch(updateActivity({ activity: updatedActivity, updateOnSearch }));
+    dispatch(
+      updateActivity({
+        token: user.token,
+        activity: updatedActivity,
+        updateOnSearch,
+      })
+    );
   };
 
   useEffect(() => {

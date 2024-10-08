@@ -231,6 +231,7 @@ const UpdateCompanyPopup: FC<{
   const { pendingCompanyUpdate, updateCompanyError } = useAppSelector(
     (state) => state.companies
   );
+  const { user } = useAppSelector((state) => state.user);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUpdatedCompanyData((prev) => ({
@@ -245,7 +246,7 @@ const UpdateCompanyPopup: FC<{
       ctc_lpa: parseFloat(updatedCompanyData.ctc_lpa.toString()),
       base_inr: parseFloat(updatedCompanyData.base_inr.toString()),
     };
-    dispatch(updateCompany(updatedData));
+    dispatch(updateCompany({ token: user.token, companyData: updatedData }));
   };
 
   useEffect(() => {

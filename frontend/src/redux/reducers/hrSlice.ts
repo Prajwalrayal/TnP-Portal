@@ -33,21 +33,26 @@ interface HRDataType {
   linkedin: string;
 }
 
-export const fetchHRData = createAsyncThunk("hr/fetchHRData", async () => {
-  const response = await fetch("/api/hr");
-  const data = await response.json();
-  return data;
-});
+export const fetchHRData = createAsyncThunk(
+  "hr/fetchHRData",
+  async (token: string) => {
+    const response = await fetch("/api/hr", {
+      body: JSON.stringify({ token }),
+    });
+    const data = await response.json();
+    return data;
+  }
+);
 
 export const addHRData = createAsyncThunk(
   "hr/addHRData",
-  async (hrData: HRDataType) => {
+  async ({ token, hrData }: { token: string; hrData: HRDataType }) => {
     const response = await fetch("/api/hr/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(hrData),
+      body: JSON.stringify({ ...hrData, token }),
     });
 
     if (!response.ok) {
@@ -61,13 +66,13 @@ export const addHRData = createAsyncThunk(
 
 export const updateHRData = createAsyncThunk(
   "hr/updateHRData",
-  async (hrData: HRDataType) => {
+  async ({ token, hrData }: { token: string; hrData: HRDataType }) => {
     const response = await fetch(`/api/hr/update/${hrData.id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(hrData),
+      body: JSON.stringify({ ...hrData, token }),
     });
 
     if (!response.ok) {

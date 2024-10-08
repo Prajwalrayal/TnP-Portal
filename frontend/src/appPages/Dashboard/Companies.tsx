@@ -14,6 +14,7 @@ const CompaniesPage = () => {
   const { companyData, filteredCompanyData, loading, error } = useAppSelector(
     (state: any) => state.companies
   );
+  const { user } = useAppSelector((state) => state.user);
   const { companySearchParam } = useAppSelector(
     (state: any) => state.searchBar
   );
@@ -22,7 +23,8 @@ const CompaniesPage = () => {
   const [isFetching, setIsFetching] = useState(false);
 
   useEffect(() => {
-    dispatch(fetchCompanyData());
+    dispatch(fetchCompanyData(user.token));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   useEffect(() => {

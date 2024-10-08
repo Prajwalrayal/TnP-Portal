@@ -47,8 +47,16 @@ const initialState: ActivitiesState = {
 
 export const fetchActivitiesData = createAsyncThunk(
   "activities/fetchActivitiesData",
-  async (onSuccess: (upcoming: Activity[], previous: Activity[]) => void) => {
-    const response = await fetch("/api/activities");
+  async ({
+    token,
+    onSuccess,
+  }: {
+    token: string;
+    onSuccess: (upcoming: Activity[], previous: Activity[]) => void;
+  }) => {
+    const response = await fetch("/api/activities", {
+      body: JSON.stringify({ token }),
+    });
     const data = await response.json();
     const currentDate = new Date();
     const upcoming = data.filter(
@@ -66,17 +74,23 @@ export const fetchActivitiesData = createAsyncThunk(
 
 export const addActivity = createAsyncThunk(
   "activities/addActivity",
-  async (newActivityData: {
-    name: string;
-    desc: string;
-    student: string;
-    status: string;
-    init_date: Date;
+  async ({
+    token,
+    newActivityData,
+  }: {
+    token: string;
+    newActivityData: {
+      name: string;
+      desc: string;
+      student: string;
+      status: string;
+      init_date: Date;
+    };
   }) => {
     const response = await fetch("/api/activities/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newActivityData),
+      body: JSON.stringify({ ...newActivityData, token }),
     });
 
     if (!response.ok) {
@@ -90,11 +104,11 @@ export const addActivity = createAsyncThunk(
 
 export const updateActivityLogs = createAsyncThunk(
   "activities/updateActivityLogs",
-  async ({ id, logs }: { id: number; logs: Log[] }) => {
+  async ({ id, logs, token }: { id: number; logs: Log[]; token: string }) => {
     const response = await fetch(`/api/activities/update/${id}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ logs }),
+      body: JSON.stringify({ logs, token }),
     });
     return response.json();
   }
@@ -103,16 +117,18 @@ export const updateActivityLogs = createAsyncThunk(
 export const updateActivity = createAsyncThunk(
   "activities/updateActivity",
   async ({
+    token,
     activity,
     updateOnSearch,
   }: {
+    token: string;
     activity: Omit<Activity, "logs" | "init_date">;
     updateOnSearch: (updatedActivity: Activity) => void;
   }) => {
     const response = await fetch(`/api/activities/update/${activity.id}/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(activity),
+      body: JSON.stringify({ ...activity, token }),
     });
     const data = await response.json();
     updateOnSearch(data);

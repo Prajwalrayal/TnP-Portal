@@ -46,8 +46,10 @@ interface InputCompanyDataType
 
 export const fetchCompanyData = createAsyncThunk(
   "company/fetchCompanyData",
-  async () => {
-    const response = await fetch("/api/companies");
+  async (token: string) => {
+    const response = await fetch("/api/companies", {
+      body: JSON.stringify({ token }),
+    });
     const data = await response.json();
     return data;
   }
@@ -55,11 +57,11 @@ export const fetchCompanyData = createAsyncThunk(
 
 export const addCompany = createAsyncThunk(
   "company/addCompany",
-  async (companyData: CompanyDataType) => {
+  async ({ token, companyData }: { token: string; companyData: any }) => {
     const response = await fetch("/api/companies/add", {
       method: "POST",
       headers: { "Content-type": "application/json" },
-      body: JSON.stringify(companyData),
+      body: JSON.stringify({ ...companyData, token }),
     });
 
     const data = await response.json();
@@ -69,11 +71,17 @@ export const addCompany = createAsyncThunk(
 
 export const updateCompany = createAsyncThunk(
   "company/updateCompany",
-  async (companyData: InputCompanyDataType) => {
+  async ({
+    token,
+    companyData,
+  }: {
+    token: string;
+    companyData: InputCompanyDataType;
+  }) => {
     const response = await fetch(`/api/companies/update/${companyData.id}`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
-      body: JSON.stringify(companyData),
+      body: JSON.stringify({ ...companyData, token }),
     });
 
     const data = await response.json();

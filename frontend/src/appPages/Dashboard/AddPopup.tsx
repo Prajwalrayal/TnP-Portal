@@ -181,6 +181,7 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
     linkedin: "",
   });
 
+  const { user } = useAppSelector((state) => state.user);
   const { pendingAdd, addError } = useAppSelector((state) => state.activities);
   const { addLoading, addError: hrAddError } = useAppSelector(
     (state) => state.hr
@@ -215,9 +216,13 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
 
   const handleSave = () => {
     if (currentSection === 0 && isCompanyDataType(companyData))
-      dispatch(addCompany(companyData as any as CompanyDataType));
-    if (currentSection === 1) dispatch(addActivity(activityData));
-    if (currentSection === 2) dispatch(addHRData(hrData));
+      dispatch(addCompany({ token: user.token, companyData }));
+    if (currentSection === 1)
+      dispatch(
+        addActivity({ token: user.token, newActivityData: activityData })
+      );
+    if (currentSection === 2)
+      dispatch(addHRData({ token: user.token, hrData }));
   };
 
   // Error and Loader Controllers for Company Section...

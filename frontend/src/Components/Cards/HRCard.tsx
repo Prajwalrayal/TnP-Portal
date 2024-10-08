@@ -165,6 +165,7 @@ const UpdateHRPopup: FC<{
 
   const [updatedHRData, setUpdatedHRData] = useState<HRDataType>(hrData);
   const { updateLoading, updateError } = useAppSelector((state) => state.hr);
+  const { user } = useAppSelector((state) => state.user);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUpdatedHRData((prev) => ({
@@ -200,7 +201,7 @@ const UpdateHRPopup: FC<{
   };
 
   const handleSave = () => {
-    dispatch(updateHRData(updatedHRData));
+    dispatch(updateHRData({ token: user.token, hrData: updatedHRData }));
   };
 
   useEffect(() => {

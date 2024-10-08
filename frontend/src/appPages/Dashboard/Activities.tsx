@@ -39,6 +39,7 @@ const Activities = () => {
   const { activitySearchParam } = useAppSelector(
     (state: any) => state.searchBar
   );
+  const { user } = useAppSelector((state) => state.user);
   const [activeTab, setActiveTab] = useState<"upcoming" | "previous">(
     "upcoming"
   );
@@ -80,7 +81,7 @@ const Activities = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchActivitiesData(onSuccess));
+    dispatch(fetchActivitiesData({ token: user.token, onSuccess }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
@@ -93,7 +94,7 @@ const Activities = () => {
       const { scrollTop, scrollHeight, clientHeight } = activitiesRef.current;
       if (scrollTop + clientHeight >= scrollHeight - 100) {
         setIsLoadingMore(true);
-        dispatch(fetchActivitiesData(onSuccess));
+        dispatch(fetchActivitiesData({ token: user.token, onSuccess }));
       }
     }
   };
