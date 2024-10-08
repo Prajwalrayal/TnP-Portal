@@ -59,7 +59,7 @@ const ActivityCard: React.FC<Activity> = ({
     setIsExpanded(!isExpanded);
   };
 
-  const handleUpdateLogs = (e: MouseEvent<HTMLElement>) => {
+  const handleUpdateLogs = async (e: MouseEvent<HTMLElement>) => {
     e.preventDefault();
     try {
       const parsedLogs = JSON.parse(updatedLogs);
@@ -74,10 +74,25 @@ const ActivityCard: React.FC<Activity> = ({
       };
 
       if (Array.isArray(parsedLogs) && parsedLogs.every(isLog)) {
-        dispatch(updateActivityLogs({ id, logs: JSON.parse(updatedLogs) }));
+        const response = await fetch(`/api/activities/logs/${id}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ log: parsedLogs }),
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || "Failed to update logs");
+        }
+
+        const updatedLogsFromAPI = await response.json();
+        dispatch(updateActivityLogs({ id, logs: updatedLogsFromAPI }));
         setIsExpanded(false);
-      } else
+      } else {
         toastError("Logs must be an array of objects of type {date: message}.");
+      }
     } catch (err) {
       toastError("Invalid JSON format in logs");
     }
