@@ -12,13 +12,14 @@ interface CompanyDataType {
   website: string;
   location: string;
   categories: string[];
-  id: string;
+  id?: string;
 }
 
 interface BodyType
   extends Omit<CompanyDataType, "roles" | "categories" | "id"> {
   roles: string;
   categories: string;
+  token: string;
 }
 
 export async function POST(request: Request) {
@@ -33,13 +34,15 @@ export async function POST(request: Request) {
     website,
     location,
     categories,
+    token,
   }: BodyType = await request.json();
 
-  const newId =
-    companyList.length > 0 ? companyList[companyList.length - 1].id + 1 : 1;
+  const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/companies`;
 
   const newCompanyData: CompanyDataType = {
-    id: `${newId}`,
+    // id: `${
+    //   companyList.length > 0 ? companyList[companyList.length - 1].id + 1 : 1
+    // }`,
     name,
     desc,
     ctc_lpa,
@@ -57,5 +60,33 @@ export async function POST(request: Request) {
       .map((category: string) => category.trim()),
   };
 
-  return NextResponse.json(newCompanyData, { status: 201 });
+  // return NextResponse.json(newCompanyData, { status: 201 });
+
+  try {
+    const sessionToken = token || "";
+
+    const response = await fetch(backendUrl, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${sessionToken}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newCompanyData),
+    });
+
+    if (!response.ok) {
+      return NextResponse.json(
+        { error: "Failed to create company" },
+        { status: response.status }
+      );
+    }
+
+    const createdCompany: CompanyDataType = await response.json();
+    return NextResponse.json(createdCompany, { status: 201 });
+  } catch (error) {
+    return NextResponse.json(
+      { error: "An error occurred while creating the company" },
+      { status: 500 }
+    );
+  }
 }
