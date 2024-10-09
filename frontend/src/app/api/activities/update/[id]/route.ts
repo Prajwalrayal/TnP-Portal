@@ -40,8 +40,6 @@ export async function PUT(request: Request) {
       status,
     };
 
-    console.log(updatedData);
-
     const response = await fetch(backendUrl, {
       method: "PUT",
       headers: {
