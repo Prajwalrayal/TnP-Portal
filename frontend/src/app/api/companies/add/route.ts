@@ -3,24 +3,47 @@ import companyList from "@/utils/Companies.json";
 
 interface CompanyDataType {
   name: string;
-  desc: string;
+  description: string;
   ctc_lpa: number;
   base_inr: number;
   roles: string[];
   criteria: string;
   logoUrl: string;
-  website: string;
+  URL: string;
   location: string;
   categories: string[];
   id?: string;
+  email?: string;
 }
 
 interface BodyType
-  extends Omit<CompanyDataType, "roles" | "categories" | "id"> {
+  extends Omit<
+    CompanyDataType,
+    "URL" | "description" | "roles" | "categories"
+  > {
+  website: string;
+  desc: string;
   roles: string;
   categories: string;
-  token: string;
+  token?: string;
 }
+
+const processCompanyData = (item: any): BodyType => {
+  return {
+    id: item.id?.toString() || "0",
+    name: item.name || "Unnamed Company",
+    desc: item.description || "No description available",
+    ctc_lpa: item.salaries?.[0]?.ctc || 0,
+    base_inr: item.salaries?.[0]?.baseSalary || 0,
+    roles: item.rolesOffered || [],
+    criteria: item.criteria || "Not specified",
+    logoUrl:
+      item.logoUrl || "https://via.placeholder.com/128x128/FFFFFF/000000",
+    website: item.website || "https://default-website.com",
+    location: item.address || "No location provided",
+    categories: item.categories || [],
+  };
+};
 
 export async function POST(request: Request) {
   const {
@@ -44,7 +67,7 @@ export async function POST(request: Request) {
     //   companyList.length > 0 ? companyList[companyList.length - 1].id + 1 : 1
     // }`,
     name,
-    desc,
+    description: desc,
     ctc_lpa,
     base_inr,
     criteria,
@@ -52,18 +75,20 @@ export async function POST(request: Request) {
       logoUrl.length === 0
         ? "https://via.placeholder.com/128x128/FFFFFF/000000"
         : logoUrl,
-    website,
+    URL: website,
     location,
     roles: roles.split(",").map((role: string) => role.trim()),
     categories: categories
       .split(",")
       .map((category: string) => category.trim()),
+    email: "",
   };
 
   // return NextResponse.json(newCompanyData, { status: 201 });
 
   try {
     const sessionToken = token || "";
+    console.log(sessionToken, newCompanyData);
 
     const response = await fetch(backendUrl, {
       method: "POST",
@@ -81,7 +106,8 @@ export async function POST(request: Request) {
       );
     }
 
-    const createdCompany: CompanyDataType = await response.json();
+    let createdCompany = await response.json();
+    createdCompany = processCompanyData(createdCompany);
     return NextResponse.json(createdCompany, { status: 201 });
   } catch (error) {
     return NextResponse.json(

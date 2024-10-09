@@ -231,22 +231,22 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
   }, [addCompanyError]);
 
   useEffect(() => {
-    // if (!pendingCompanyCreate) {
-    //   setCompanyData({
-    //     name: "",
-    //     desc: "",
-    //     ctc_lpa: "",
-    //     base_inr: "",
-    //     roles: [],
-    //     criteria: "",
-    //     logoUrl: "",
-    //     website: "",
-    //     location: "",
-    //     categories: [],
-    //     id: "",
-    //   });
-    //   closePopup();
-    // }
+    if (!pendingCompanyCreate) {
+      setCompanyData({
+        name: "",
+        desc: "",
+        ctc_lpa: "",
+        base_inr: "",
+        roles: [],
+        criteria: "",
+        logoUrl: "",
+        website: "",
+        location: "",
+        categories: [],
+        id: "",
+      });
+      closePopup();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pendingCompanyCreate]);
 

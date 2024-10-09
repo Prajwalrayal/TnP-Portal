@@ -21,6 +21,7 @@ interface ActivitiesState {
   filteredUpcoming: Activity[];
   filteredPrevious: Activity[];
   loading: boolean;
+  loadingLogs: boolean;
   pendingUpdate: boolean;
   pendingLogUpdate: boolean;
   updateError: string | null;
@@ -28,6 +29,7 @@ interface ActivitiesState {
   addError: string | null;
   logUpdateError: string | null;
   error: string | null;
+  logsError: string | null;
 }
 
 const initialState: ActivitiesState = {
@@ -36,6 +38,7 @@ const initialState: ActivitiesState = {
   filteredUpcoming: [],
   filteredPrevious: [],
   loading: false,
+  loadingLogs: false,
   pendingUpdate: false,
   pendingLogUpdate: false,
   updateError: null,
@@ -43,6 +46,17 @@ const initialState: ActivitiesState = {
   addError: null,
   logUpdateError: null,
   error: null,
+  logsError: null,
+};
+
+const convertLogEntry = (logEntry: {
+  id: number;
+  log: string;
+  timestamp: string;
+}): Log => {
+  return {
+    [logEntry.timestamp]: logEntry.log,
+  };
 };
 
 export const fetchActivitiesData = createAsyncThunk(
@@ -104,15 +118,53 @@ export const addActivity = createAsyncThunk(
   }
 );
 
+export const fetchActivityLogsData = createAsyncThunk(
+  "activities/fetchActivityLogData",
+  async ({
+    id,
+    token,
+    onSuccess,
+  }: {
+    id: number;
+    token: string;
+    onSuccess: (logs: Log[]) => void;
+  }) => {
+    const response = await fetch(`/api/activities/logs/${id}`, {
+      headers: {
+        Authorization: token,
+      },
+    });
+    const data = await response.json();
+    const formattedLogs: Log[] = data.map((log: any) => convertLogEntry(log));
+
+    onSuccess(formattedLogs);
+
+    return { id, logs: formattedLogs };
+  }
+);
+
 export const updateActivityLogs = createAsyncThunk(
   "activities/updateActivityLogs",
-  async ({ id, logs, token }: { id: number; logs: Log[]; token: string }) => {
-    const response = await fetch(`/api/activities/update/${id}`, {
+  async ({
+    id,
+    logs,
+    token,
+    onSuccess,
+  }: {
+    id: number;
+    logs: Log[];
+    token: string;
+    onSuccess: (logs: Log) => void;
+  }) => {
+    const response = await fetch(`/api/activities/logs/${id}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ logs, token }),
     });
-    return response.json();
+    const data = await response.json();
+    const updatedLog = convertLogEntry(data);
+    onSuccess(updatedLog);
+    return { id, updatedLog };
   }
 );
 
@@ -205,23 +257,28 @@ const activitiesSlice = createSlice({
           action.error.message || "Failed to fetch activities data.";
       })
 
-      // Update Activity Logs...
-      .addCase(updateActivityLogs.pending, (state) => {
-        state.pendingLogUpdate = true;
-        state.logUpdateError = null;
+      // Fetch Activity Logs...
+      .addCase(fetchActivityLogsData.pending, (state) => {
+        state.loadingLogs = true;
+        state.logsError = null;
       })
-      .addCase(updateActivityLogs.fulfilled, (state, action) => {
-        const updatedActivity = action.payload;
-        const updateInList = (list: Activity[]) => {
+      .addCase(fetchActivityLogsData.fulfilled, (state, action) => {
+        const { id, logs } = action.payload;
+
+        const updateLogsInActivity = (list: Activity[]) => {
           const index = list.findIndex(
-            (activity) => activity.id === updatedActivity.id
+            (activity) => activity.id === Number(id)
           );
-          if (index !== -1) list[index] = updatedActivity;
+          if (index !== -1) {
+            list[index].logs = logs;
+          }
         };
-        updateInList(state.upcomingActivities);
-        updateInList(state.previousActivities);
-        updateInList(state.filteredUpcoming);
-        updateInList(state.filteredPrevious);
+
+        updateLogsInActivity(state.upcomingActivities);
+        updateLogsInActivity(state.previousActivities);
+        updateLogsInActivity(state.filteredUpcoming);
+        updateLogsInActivity(state.filteredPrevious);
+
         state.upcomingActivities = sortActivitiesChronologically(
           state.upcomingActivities
         );
@@ -234,6 +291,49 @@ const activitiesSlice = createSlice({
         state.filteredPrevious = sortActivitiesChronologically(
           state.filteredPrevious
         );
+
+        state.loadingLogs = false;
+        state.logsError = null;
+      })
+      .addCase(fetchActivityLogsData.rejected, (state, action) => {
+        state.loadingLogs = false;
+        state.logsError =
+          action.error.message || "Failed to update activity logs.";
+      })
+
+      // Update Activity Logs...
+      .addCase(updateActivityLogs.pending, (state) => {
+        state.pendingLogUpdate = true;
+        state.logUpdateError = null;
+      })
+      .addCase(updateActivityLogs.fulfilled, (state, action) => {
+        const { id, updatedLog } = action.payload;
+
+        const updateLogsInActivity = (list: Activity[]) => {
+          const index = list.findIndex((activity) => activity.id === id);
+          if (index !== -1) {
+            list[index].logs = [...list[index].logs, updatedLog];
+          }
+        };
+
+        updateLogsInActivity(state.upcomingActivities);
+        updateLogsInActivity(state.previousActivities);
+        updateLogsInActivity(state.filteredUpcoming);
+        updateLogsInActivity(state.filteredPrevious);
+
+        state.upcomingActivities = sortActivitiesChronologically(
+          state.upcomingActivities
+        );
+        state.previousActivities = sortActivitiesChronologically(
+          state.previousActivities
+        );
+        state.filteredUpcoming = sortActivitiesChronologically(
+          state.filteredUpcoming
+        );
+        state.filteredPrevious = sortActivitiesChronologically(
+          state.filteredPrevious
+        );
+
         state.pendingLogUpdate = false;
         state.logUpdateError = null;
       })

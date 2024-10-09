@@ -1,6 +1,34 @@
 import activityList from "@/utils/Activities.json";
 import { NextResponse } from "next/server";
 
+interface Log {
+  [key: string]: string;
+}
+
+interface ActivityDataType {
+  id: number;
+  desc: string;
+  name: string;
+  student: string;
+  status: string;
+  init_date: Date;
+  last_updated_on: Date;
+  logs: Log[];
+}
+
+const processActivityData = (item: any): ActivityDataType => {
+  return {
+    id: item.id || 0,
+    desc: item.description || "No description provided",
+    name: item.userName || "Unknown",
+    student: item.userEmail || "No email",
+    status: item.status || "UNKNOWN",
+    init_date: new Date(item.createdAt) || new Date(),
+    last_updated_on: new Date(item.lastUpdated) || new Date(),
+    logs: item.logs || [],
+  };
+};
+
 export async function PUT(request: Request) {
   const { id, logs, token, ...updatedData } = await request.json();
   const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/activities/${id}`;
@@ -48,8 +76,9 @@ export async function PUT(request: Request) {
       );
     }
 
-    const updatedActivity = await response.json();
-    return NextResponse.json(updatedActivity);
+    let updatedActivity = await response.json();
+    updatedActivity = processActivityData(updatedActivity);
+    return NextResponse.json(updatedActivity, { status: 200 });
   } catch (error) {
     return NextResponse.json(
       { error: "An error occurred while updating the activity" },

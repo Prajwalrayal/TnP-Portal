@@ -1,6 +1,34 @@
 import activityList from "@/utils/Activities.json";
 import { NextResponse } from "next/server";
 
+interface Log {
+  [key: string]: string;
+}
+
+interface ActivityDataType {
+  id: number;
+  desc: string;
+  name: string;
+  student: string;
+  status: string;
+  init_date: Date;
+  last_updated_on: Date;
+  logs: Log[];
+}
+
+const processActivityData = (item: any): ActivityDataType => {
+  return {
+    id: item.id || 0,
+    desc: item.description || "No description provided",
+    name: item.userName || "Unknown",
+    student: item.userEmail || "No email",
+    status: item.status || "UNKNOWN",
+    init_date: new Date(item.createdAt) || new Date(),
+    last_updated_on: new Date(item.lastUpdated) || new Date(),
+    logs: item.logs || [],
+  };
+};
+
 export async function POST(request: Request) {
   const { name, desc, student, status, init_date, token } =
     await request.json();
@@ -43,7 +71,8 @@ export async function POST(request: Request) {
       );
     }
 
-    const createdActivity = await response.json();
+    let createdActivity = await response.json();
+    createdActivity = processActivityData(createdActivity);
     return NextResponse.json(createdActivity, { status: 201 });
   } catch (error) {
     return NextResponse.json(

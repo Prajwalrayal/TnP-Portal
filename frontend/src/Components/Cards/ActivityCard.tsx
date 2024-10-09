@@ -1,6 +1,7 @@
 import { MouseEvent } from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
+  fetchActivityLogsData,
   updateActivity,
   updateActivityLogs,
 } from "@/redux/reducers/activitiesSlice";
@@ -53,10 +54,18 @@ const ActivityCard: React.FC<Activity> = ({
     updateError,
     pendingLogUpdate,
     logUpdateError,
+    loadingLogs,
+    logsError,
   } = useAppSelector((state) => state.activities);
   const { user } = useAppSelector((state) => state.user);
 
   const handleToggleLogs = () => {
+    if (!isExpanded) {
+      const onSuccess = (data: Log[]) => {
+        setUpdatedLogs(JSON.stringify(data));
+      };
+      dispatch(fetchActivityLogsData({ id, token: user.token, onSuccess }));
+    }
     setIsExpanded(!isExpanded);
   };
 
@@ -74,26 +83,19 @@ const ActivityCard: React.FC<Activity> = ({
         );
       };
 
+      const onSuccess = (data: Log) => {
+        const temp = JSON.parse(updatedLogs);
+        temp.push(data);
+        setUpdatedLogs(JSON.stringify(temp));
+      };
+
       if (Array.isArray(parsedLogs) && parsedLogs.every(isLog)) {
-        const response = await fetch(`/api/activities/logs/${id}`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ log: parsedLogs }),
-        });
-
-        if (!response.ok) {
-          const errorData = await response.json();
-          throw new Error(errorData.error || "Failed to update logs");
-        }
-
-        const updatedLogsFromAPI = await response.json();
         dispatch(
           updateActivityLogs({
             id,
-            logs: updatedLogsFromAPI,
+            logs: parsedLogs,
             token: user.token,
+            onSuccess,
           })
         );
         setIsExpanded(false);

@@ -1,6 +1,26 @@
 import { NextResponse } from "next/server";
 import hrDataList from "@/utils/HR.json";
 
+interface HRDataType {
+  id: number;
+  name: string;
+  email: string;
+  company: string;
+  phone_numbers: string[];
+  linkedin: string;
+}
+
+const processHRData = (item: any): HRDataType => {
+  return {
+    id: item.id || 0,
+    name: `${item.firstName || "Unknown"} ${item.lastName || "Name"}`,
+    email: item.email || "No email provided",
+    company: item.company?.name || "Unknown Company",
+    phone_numbers: item.mobileNumbers || [],
+    linkedin: item.linkedinUrl || "No LinkedIn profile",
+  };
+};
+
 export async function POST(request: Request) {
   const { name, email, company, phone_numbers, linkedin, token } =
     await request.json();
@@ -40,7 +60,8 @@ export async function POST(request: Request) {
       );
     }
 
-    const createdHR = await response.json();
+    let createdHR = await response.json();
+    createdHR = processHRData(createdHR);
     return NextResponse.json(createdHR, { status: 201 });
   } catch (error) {
     return NextResponse.json(

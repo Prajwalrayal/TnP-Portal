@@ -18,8 +18,25 @@ interface CompanyDataType {
 interface BodyType extends Omit<CompanyDataType, "roles" | "categories"> {
   roles: string;
   categories: string;
-  token: string;
+  token?: string;
 }
+
+const processCompanyData = (item: any): BodyType => {
+  return {
+    id: item.id?.toString() || "0",
+    name: item.name || "Unnamed Company",
+    desc: item.description || "No description available",
+    ctc_lpa: item.salaries?.[0]?.ctc || 0,
+    base_inr: item.salaries?.[0]?.baseSalary || 0,
+    roles: item.rolesOffered || [],
+    criteria: item.criteria || "Not specified",
+    logoUrl:
+      item.logoUrl || "https://via.placeholder.com/128x128/FFFFFF/000000",
+    website: item.website || "https://default-website.com",
+    location: item.address || "No location provided",
+    categories: item.categories || [],
+  };
+};
 
 export async function PUT(request: Request) {
   const {
@@ -94,8 +111,9 @@ export async function PUT(request: Request) {
       return NextResponse.json({ error: "Company not found" }, { status: 404 });
     }
 
-    const updatedCompany: CompanyDataType = await response.json();
-    return NextResponse.json(updatedCompany);
+    let updatedCompany = await response.json();
+    updatedCompany = processCompanyData(updatedCompany);
+    return NextResponse.json(updatedCompany, { status: 200 });
   } catch (error) {
     return NextResponse.json(
       { error: "An error occurred while updating the company" },

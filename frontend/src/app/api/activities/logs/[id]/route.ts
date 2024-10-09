@@ -5,8 +5,15 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   const { id } = params;
-  const { token } = await request.json();
-  const sessionToken = token || "";
+  const authorizationHeader = request.headers.get("authorization");
+
+  if (!authorizationHeader) {
+    return NextResponse.json(
+      { error: "Authorization header is missing" },
+      { status: 401 }
+    );
+  }
+  const sessionToken = authorizationHeader || "";
   const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/activities/logs/${id}`;
 
   try {
