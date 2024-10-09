@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { setHRData, setSearchQuery } from "@/redux/reducers/hrSlice";
+import {
+  fetchHRData,
+  setHRData,
+  setSearchQuery,
+} from "@/redux/reducers/hrSlice";
 import { HRCard, Search } from "@/Components";
 
 interface HRDataType {
@@ -17,6 +21,7 @@ const HR = () => {
   const [data, setData] = useState<HRDataType[]>([]);
   const { hrData, filteredData } = useAppSelector((state: any) => state.hr);
   const { hrSearchParam } = useAppSelector((state: any) => state.searchBar);
+  const { user } = useAppSelector((state) => state.user);
 
   useEffect(() => {
     setData(hrSearchParam.length === 0 ? hrData : filteredData);
@@ -27,13 +32,8 @@ const HR = () => {
   };
 
   useEffect(() => {
-    const fetchHRData = async () => {
-      const response = await fetch("/api/hr");
-      const data: HRDataType[] = await response.json();
-      setData(data);
-      dispatch(setHRData(data));
-    };
-    fetchHRData();
+    dispatch(fetchHRData(user.token));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   return (

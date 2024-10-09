@@ -48,7 +48,9 @@ export const fetchCompanyData = createAsyncThunk(
   "company/fetchCompanyData",
   async (token: string) => {
     const response = await fetch("/api/companies", {
-      body: JSON.stringify({ token }),
+      headers: {
+        Authorization: token,
+      },
     });
     const data = await response.json();
     return data;

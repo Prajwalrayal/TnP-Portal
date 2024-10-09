@@ -26,6 +26,10 @@ const Home = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  if (!isAuthenticated) {
+    return <></>;
+  }
+
   return <DashboardPage />;
 };
 

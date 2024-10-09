@@ -37,7 +37,9 @@ export const fetchHRData = createAsyncThunk(
   "hr/fetchHRData",
   async (token: string) => {
     const response = await fetch("/api/hr", {
-      body: JSON.stringify({ token }),
+      headers: {
+        Authorization: token,
+      },
     });
     const data = await response.json();
     return data;

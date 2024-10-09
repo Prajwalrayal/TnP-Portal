@@ -55,7 +55,9 @@ export const fetchActivitiesData = createAsyncThunk(
     onSuccess: (upcoming: Activity[], previous: Activity[]) => void;
   }) => {
     const response = await fetch("/api/activities", {
-      body: JSON.stringify({ token }),
+      headers: {
+        Authorization: token,
+      },
     });
     const data = await response.json();
     const currentDate = new Date();

@@ -30,13 +30,18 @@ export async function GET(request: Request) {
   const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/clients`;
 
   try {
-    // Extract the token from the request body
-    const body = await request.json();
-    const token = body.token || "";
+    const authorizationHeader = request.headers.get("authorization");
+
+    if (!authorizationHeader) {
+      return NextResponse.json(
+        { error: "Authorization header is missing" },
+        { status: 401 }
+      );
+    }
 
     const response = await fetch(backendUrl, {
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${authorizationHeader}`,
       },
     });
 

@@ -191,6 +191,8 @@ const ActivityCard: React.FC<Activity> = ({
     switch (status.toLowerCase()) {
       case "upcoming":
         return "border-green-500";
+      case "initiated":
+        return "border-green-500";
       case "confirmed":
         return "border-blue-500";
       case "pending":

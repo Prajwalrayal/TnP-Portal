@@ -115,7 +115,7 @@ const LoginForm = () => {
           </div> */}
           {loading ? (
             <div className={`flex items-center justify-center h-10`}>
-              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-neutral-200 border-solid" />
+              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-green-800 border-solid" />
             </div>
           ) : (
             <button
