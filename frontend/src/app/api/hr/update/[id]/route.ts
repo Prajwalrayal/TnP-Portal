@@ -58,8 +58,6 @@ export async function PUT(request: Request) {
   try {
     const sessionToken = token || "";
 
-    console.log(sessionToken, { id, ...updatedData });
-
     const response = await fetch(backendUrl, {
       method: "PUT",
       headers: {
