@@ -36,7 +36,7 @@ const HRCard = ({ hr, index }: { hr: HRDataType; index: number }) => {
       })}
     >
       <h3 className="font-bold group-hover:text-primary">{hr.name}</h3>
-      <p className="text-neutral-600 text-sm">{`${hr.email} | ${hr.linkedin}`}</p>
+      <p className="text-neutral-600 text-sm">{`${hr.email}`}</p>
       <p className="text-neutral-600 text-sm">{`${hr.position} | ${hr.company}`}</p>
 
       <FaEdit

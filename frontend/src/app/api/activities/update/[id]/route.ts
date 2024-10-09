@@ -1,4 +1,3 @@
-import activityList from "@/utils/Activities.json";
 import { NextResponse } from "next/server";
 
 interface Log {
@@ -30,31 +29,18 @@ const processActivityData = (item: any): ActivityDataType => {
 };
 
 export async function PUT(request: Request) {
-  const { id, logs, token, ...updatedData } = await request.json();
+  const { id, logs, token, desc, name, status } = await request.json();
   const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/activities/${id}`;
-
-  // const activityIndex = activityList.findIndex(
-  //   (activity) => activity.id === id
-  // );
-  // if (activityIndex === -1) {
-  //   return NextResponse.json({ error: "Activity not found" }, { status: 404 });
-  // }
-
-  // const updatedActivity = {
-  //   ...activityList[activityIndex],
-  //   ...updatedData,
-  // };
-
-  // if (logs) {
-  //   updatedActivity.logs = logs;
-  // }
-
-  // activityList[activityIndex] = updatedActivity;
-
-  // return NextResponse.json(updatedActivity);
 
   try {
     const sessionToken = token || "";
+
+    const updatedData = {
+      description: desc,
+      status,
+    };
+
+    console.log(updatedData);
 
     const response = await fetch(backendUrl, {
       method: "PUT",

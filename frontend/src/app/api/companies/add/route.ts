@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import companyList from "@/utils/Companies.json";
 
 interface CompanyDataType {
   name: string;
@@ -9,7 +8,7 @@ interface CompanyDataType {
   roles: string[];
   criteria: string;
   logoUrl: string;
-  URL: string;
+  website: string;
   location: string;
   categories: string[];
   id?: string;
@@ -17,11 +16,7 @@ interface CompanyDataType {
 }
 
 interface BodyType
-  extends Omit<
-    CompanyDataType,
-    "URL" | "description" | "roles" | "categories"
-  > {
-  website: string;
+  extends Omit<CompanyDataType, "description" | "roles" | "categories"> {
   desc: string;
   roles: string;
   categories: string;
@@ -62,29 +57,29 @@ export async function POST(request: Request) {
 
   const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/companies`;
 
-  const newCompanyData: CompanyDataType = {
-    // id: `${
-    //   companyList.length > 0 ? companyList[companyList.length - 1].id + 1 : 1
-    // }`,
+  const newCompanyData = {
     name,
+    email: "",
     description: desc,
-    ctc_lpa,
-    base_inr,
+    salary: [
+      {
+        ctc: ctc_lpa,
+        baseSalary: base_inr,
+        description: roles.split(",").map((role: string) => role.trim())[0],
+      },
+    ],
     criteria,
     logoUrl:
       logoUrl.length === 0
         ? "https://via.placeholder.com/128x128/FFFFFF/000000"
         : logoUrl,
-    URL: website,
-    location,
-    roles: roles.split(",").map((role: string) => role.trim()),
+    website,
+    address: location,
+    rolesOffered: roles.split(",").map((role: string) => role.trim()),
     categories: categories
       .split(",")
       .map((category: string) => category.trim()),
-    email: "",
   };
-
-  // return NextResponse.json(newCompanyData, { status: 201 });
 
   try {
     const sessionToken = token || "";

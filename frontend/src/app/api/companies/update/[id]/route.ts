@@ -1,4 +1,3 @@
-import companyList from "@/utils/Companies.json";
 import { NextResponse } from "next/server";
 
 interface CompanyDataType {
@@ -56,30 +55,30 @@ export async function PUT(request: Request) {
 
   const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/companies/${id}`;
 
-  // const companyIndex = companyList.findIndex((company) => company.id === id);
-  // if (companyIndex === -1) {
-  //   return NextResponse.json({ error: "Company not found" }, { status: 404 });
-  // }
-
-  // const updatedCompany: CompanyDataType = {
-  //   ...companyList[companyIndex],
-  //   name,
-  //   desc,
-  //   ctc_lpa,
-  //   base_inr,
-  //   criteria,
-  //   logoUrl,
-  //   website,
-  //   location,
-  //   roles: roles.split(",").map((role: string) => role.trim()),
-  //   categories: categories
-  //     .split(",")
-  //     .map((category: string) => category.trim()),
-  // };
-
-  // companyList[companyIndex] = updatedCompany;
-
-  // return NextResponse.json(updatedCompany);
+  const updateCompanyData = {
+    name,
+    email: "",
+    description: desc,
+    salaries: [
+      {
+        id: 1,
+        ctc: ctc_lpa,
+        baseSalary: base_inr,
+        description: roles.split(",").map((role: string) => role.trim())[0],
+      },
+    ],
+    criteria,
+    logoUrl:
+      logoUrl.length === 0
+        ? "https://via.placeholder.com/128x128/FFFFFF/000000"
+        : logoUrl,
+    website,
+    address: location,
+    rolesOffered: roles.split(",").map((role: string) => role.trim()),
+    categories: categories
+      .split(",")
+      .map((category: string) => category.trim()),
+  };
 
   try {
     const sessionToken = token || "";
@@ -90,21 +89,7 @@ export async function PUT(request: Request) {
         Authorization: `Bearer ${sessionToken}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        id,
-        name,
-        desc,
-        ctc_lpa,
-        base_inr,
-        criteria,
-        logoUrl,
-        website,
-        location,
-        roles: roles.split(",").map((role: string) => role.trim()),
-        categories: categories
-          .split(",")
-          .map((category: string) => category.trim()),
-      }),
+      body: JSON.stringify(updateCompanyData),
     });
 
     if (!response.ok) {
