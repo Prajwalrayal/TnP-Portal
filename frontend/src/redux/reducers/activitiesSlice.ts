@@ -157,7 +157,7 @@ export const updateActivityLogs = createAsyncThunk(
     onSuccess: (logs: Log) => void;
   }) => {
     const response = await fetch(`/api/activities/logs/${id}`, {
-      method: "POST",
+      method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ logs, token }),
     });
@@ -180,7 +180,7 @@ export const updateActivity = createAsyncThunk(
     updateOnSearch: (updatedActivity: Activity) => void;
   }) => {
     const response = await fetch(`/api/activities/update/${activity.id}/`, {
-      method: "POST",
+      method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...activity, token }),
     });

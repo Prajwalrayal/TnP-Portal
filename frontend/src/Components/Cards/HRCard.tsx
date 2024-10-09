@@ -1,8 +1,9 @@
+import useOnClickOutside from "@/custom-hooks/useOnClickOutside";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { updateHRData } from "@/redux/reducers/hrSlice";
+import { resetHRError, updateHRData } from "@/redux/reducers/hrSlice";
 import { toastError } from "@/utils/toasts.mjs";
 import classNames from "classnames";
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { FaEdit } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
@@ -12,6 +13,7 @@ interface HRDataType {
   name: string;
   email: string;
   company: string;
+  position: string;
   phone_numbers: string[];
   linkedin: string;
 }
@@ -19,7 +21,6 @@ interface HRDataType {
 const HRCard = ({ hr, index }: { hr: HRDataType; index: number }) => {
   const [dropdownOpen, setDropdownOpen] = useState<number | null>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [currentHRData, setCurrentHRData] = useState<HRDataType>(hr);
 
   const toggleDropdown = (index: number) => {
     setDropdownOpen(dropdownOpen === index ? null : index);
@@ -35,8 +36,8 @@ const HRCard = ({ hr, index }: { hr: HRDataType; index: number }) => {
       })}
     >
       <h3 className="font-bold group-hover:text-primary">{hr.name}</h3>
-      <p className="text-neutral-600 text-sm">{hr.email}</p>
-      <p className="text-neutral-600 text-sm">{hr.company}</p>
+      <p className="text-neutral-600 text-sm">{`${hr.email} | ${hr.linkedin}`}</p>
+      <p className="text-neutral-600 text-sm">{`${hr.position} | ${hr.company}`}</p>
 
       <FaEdit
         size={20}
@@ -44,14 +45,13 @@ const HRCard = ({ hr, index }: { hr: HRDataType; index: number }) => {
         onClick={(e) => {
           e.preventDefault();
           setIsPopupOpen(true);
-          setCurrentHRData(hr);
         }}
       />
 
       <UpdateHRPopup
         isOpen={isPopupOpen}
         closePopup={() => setIsPopupOpen(false)}
-        hrData={currentHRData}
+        hrData={hr}
       />
 
       {/* Dropdown button */}
@@ -117,15 +117,6 @@ const HRCard = ({ hr, index }: { hr: HRDataType; index: number }) => {
   );
 };
 
-interface HRDataType {
-  id: number;
-  name: string;
-  email: string;
-  company: string;
-  phone_numbers: string[];
-  linkedin: string;
-}
-
 interface InputFieldProps {
   id: string;
   name: string;
@@ -155,6 +146,106 @@ const InputField: React.FC<InputFieldProps> = ({
     />
   </div>
 );
+
+const CompanyDropdown: React.FC<{
+  value: string;
+  onChange: (value: string) => void;
+}> = ({ value, onChange }) => {
+  const [search, setSearch] = useState(value || "");
+  const [isDropdownOpen, setIsDropDownOpen] = useState(false);
+  const { companyData } = useAppSelector((state: any) => state.companies);
+  const [filteredCompanies, setFilteredCompanies] = useState([]);
+  const companyDropdownRef = useRef(null);
+
+  useOnClickOutside(companyDropdownRef, () => {
+    setIsDropDownOpen(false);
+  });
+
+  useEffect(() => {
+    const company = companyData.find((company: any) => company.name === value);
+    onChange(company.id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    const temp = companyData.filter((company: any) =>
+      company.name.toLowerCase().includes(search.toLowerCase())
+    );
+    setFilteredCompanies(temp);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search]);
+
+  useEffect(() => {
+    if (search.trim() && filteredCompanies.length > 0) setIsDropDownOpen(true);
+    else setIsDropDownOpen(false);
+  }, [search, filteredCompanies]);
+
+  return (
+    <div className="mb-2 w-full relative">
+      <input
+        type="text"
+        placeholder="Search Company"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="border p-2 w-full focus:outline-green-800 rounded-md"
+      />
+      {isDropdownOpen && (
+        <div
+          ref={companyDropdownRef}
+          className="absolute top-[2.5rem] w-full border p-2 mt-1 bg-neutral-200 shadow-xl rounded-md max-h-48 overflow-y-auto z-[100000]"
+        >
+          {filteredCompanies.map((company: any) => (
+            <div
+              key={company.id}
+              onClick={() => {
+                onChange(company.id);
+                setIsDropDownOpen(false);
+              }}
+              className="p-2 cursor-pointer hover:bg-green-100"
+            >
+              {company.name}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const PositionDropdown: React.FC<{
+  position: string;
+  onChange: (value: string) => void;
+}> = ({ position, onChange }) => {
+  const options = [
+    "VICE_PRESIDENT_OF_HIRING",
+    "ENGINEERING_MANAGER",
+    "TALENT_ACQUISITION_SPECIALIST",
+    "SOFTWARE_ENGINEER",
+    "SENIOR_SOFTWARE_ENGINEER",
+    "CAMPUS_RECRUITER",
+    "DIRECTOR_OF_ENGINEERING",
+    "HIRING_MANAGER",
+    "HR_MANAGER",
+    "DIRECTOR_OF_TALENT_ACQUISITION",
+  ];
+  return (
+    <select
+      title={""}
+      value={position}
+      onChange={(e) => onChange(e.target.value)}
+      className="border p-2 w-full focus:outline-green-800 mb-2"
+    >
+      <option value="" disabled>
+        Select Position
+      </option>
+      {options.map((option) => (
+        <option key={option} value={option}>
+          {option.charAt(0).toUpperCase() + option.slice(1)}
+        </option>
+      ))}
+    </select>
+  );
+};
 
 const UpdateHRPopup: FC<{
   isOpen: boolean;
@@ -205,7 +296,11 @@ const UpdateHRPopup: FC<{
   };
 
   useEffect(() => {
-    if (updateError) toastError(updateError);
+    if (updateError) {
+      toastError(updateError);
+      dispatch(resetHRError());
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [updateError]);
 
   useEffect(() => {
@@ -221,6 +316,11 @@ const UpdateHRPopup: FC<{
     { id: "name", name: "Name", value: updatedHRData.name },
     { id: "email", name: "Email", value: updatedHRData.email },
     { id: "company", name: "Company", value: updatedHRData.company },
+    {
+      id: "position",
+      name: "Position",
+      value: (updateHRData as any).position,
+    },
     { id: "linkedin", name: "LinkedIn", value: updatedHRData.linkedin },
   ];
 
@@ -235,23 +335,47 @@ const UpdateHRPopup: FC<{
             <IoMdClose size={24} />
           </div>
         </div>
-
         <h2 className="text-lg font-bold">Update HR Info</h2>
         <p className="text-xs text-neutral-600 mb-4">
           (Please provide the following details:)
         </p>
-
-        {fields.map((field) => (
-          <InputField
-            key={field.id}
-            id={field.id}
-            name={field.id}
-            value={field.value}
-            onChange={handleChange}
-            placeholder={field.name}
-          />
-        ))}
-
+        {fields.map((field) => {
+          if (field.id === "company") {
+            return (
+              <CompanyDropdown
+                key={field.id}
+                value={field.value}
+                onChange={(value) =>
+                  setUpdatedHRData((prev: any) => ({ ...prev, company: value }))
+                }
+              />
+            );
+          }
+          if (field.id === "position") {
+            return (
+              <PositionDropdown
+                key={field.id}
+                position={field.value}
+                onChange={(value) => {
+                  setUpdatedHRData((prev: any) => ({
+                    ...prev,
+                    psotion: value,
+                  }));
+                }}
+              />
+            );
+          }
+          return (
+            <InputField
+              key={field.id}
+              id={field.id}
+              name={field.id}
+              value={field.value}
+              onChange={handleChange}
+              placeholder={field.name}
+            />
+          );
+        })}
         <h3 className="font-medium text-neutral-600 mt-4 mb-2">
           Add Phone Numbers
         </h3>
@@ -285,7 +409,6 @@ const UpdateHRPopup: FC<{
         >
           Add Phone Number
         </button>
-
         <div className="w-full flex justify-end items-end">
           <button
             type="button"

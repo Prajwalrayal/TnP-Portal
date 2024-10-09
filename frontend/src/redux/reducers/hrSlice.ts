@@ -29,6 +29,7 @@ interface HRDataType {
   name: string;
   email: string;
   company: string;
+  position: string;
   phone_numbers: string[];
   linkedin: string;
 }
@@ -70,7 +71,7 @@ export const updateHRData = createAsyncThunk(
   "hr/updateHRData",
   async ({ token, hrData }: { token: string; hrData: HRDataType }) => {
     const response = await fetch(`/api/hr/update/${hrData.id}`, {
-      method: "POST",
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -106,6 +107,11 @@ const hrSlice = createSlice({
     setSearchQuery(state, action: PayloadAction<string>) {
       state.searchQuery = action.payload;
       state.filteredData = filterData(state.hrData, action.payload);
+    },
+    resetHRError(state) {
+      state.addError = null;
+      state.updateError = null;
+      state.error = null;
     },
   },
   extraReducers: (builder) => {
@@ -147,8 +153,9 @@ const hrSlice = createSlice({
       })
       .addCase(updateHRData.fulfilled, (state, action) => {
         state.updateLoading = false;
+        let temp: any = [...state.hrData];
         const hrIndex = state.hrData.findIndex(
-          (hr) => hr.id === action.payload.id
+          (hr) => hr.id - 1 === action.payload.id
         );
         if (hrIndex !== -1) {
           state.hrData[hrIndex] = action.payload;
@@ -162,5 +169,5 @@ const hrSlice = createSlice({
   },
 });
 
-export const { setHRData, setSearchQuery } = hrSlice.actions;
+export const { setHRData, setSearchQuery, resetHRError } = hrSlice.actions;
 export default hrSlice.reducer;

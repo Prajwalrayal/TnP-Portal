@@ -6,6 +6,7 @@ interface HRDataType {
   name: string;
   email: string;
   company: string;
+  position: string;
   phone_numbers: string[];
   linkedin: string;
 }
@@ -13,33 +14,33 @@ interface HRDataType {
 const processHRData = (item: any): HRDataType => {
   return {
     id: item.id || 0,
-    name: `${item.firstName || "Unknown"} ${item.lastName || "Name"}`,
+    name: `${item.firstName || "Unknown Name"} ${item.lastName || ""}`,
     email: item.email || "No email provided",
     company: item.company?.name || "Unknown Company",
+    position: item.position || "Unknown Position",
     phone_numbers: item.mobileNumbers || [],
     linkedin: item.linkedinUrl || "No LinkedIn profile",
   };
 };
 
 export async function POST(request: Request) {
-  const { name, email, company, phone_numbers, linkedin, token } =
+  const { name, email, company, position, phone_numbers, linkedin, token } =
     await request.json();
 
-  const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/hr`;
-
-  const currentDate = new Date();
+  const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/clients`;
 
   const newHRData = {
-    // id: hrDataList.length > 0 ? hrDataList[hrDataList.length - 1].id + 1 : 1,
-    name,
     email,
-    company,
-    phone_numbers,
-    linkedin,
-    created_at: currentDate,
+    firstName: name,
+    lastName: "",
+    description: "",
+    company: {
+      id: parseInt(company),
+    },
+    position,
+    mobileNumbers: phone_numbers,
+    linkedinUrl: linkedin,
   };
-
-  // return NextResponse.json(newHRData, { status: 201 });
 
   try {
     const sessionToken = token || "";

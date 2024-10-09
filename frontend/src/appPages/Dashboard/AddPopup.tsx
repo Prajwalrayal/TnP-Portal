@@ -1,4 +1,4 @@
-import { useState, FC, useEffect, use } from "react";
+import { useState, FC, useEffect, use, useRef } from "react";
 import { IoMdClose } from "react-icons/io";
 import classNames from "classnames";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
@@ -7,6 +7,7 @@ import { toastError } from "@/utils/toasts.mjs";
 import { addHRData } from "@/redux/reducers/hrSlice";
 import { IoClose } from "react-icons/io5";
 import { addCompany } from "@/redux/reducers/companySlice";
+import useOnClickOutside from "@/custom-hooks/useOnClickOutside";
 
 interface Log {
   [key: string]: string;
@@ -81,6 +82,7 @@ interface HRDataType {
   name: string;
   email: string;
   company: string;
+  position: string;
   phone_numbers: string[];
   linkedin: string;
 }
@@ -115,6 +117,68 @@ const InputField: React.FC<InputFieldProps> = ({
   </div>
 );
 
+const CompanyDropdown: React.FC<{
+  value: string;
+  onChange: (value: string) => void;
+}> = ({ value, onChange }) => {
+  const [search, setSearch] = useState("");
+  const [isDropdownOpen, setIsDropDownOpen] = useState(false);
+  const { companyData } = useAppSelector((state: any) => state.companies);
+  const [filteredCompanies, setFilteredCompanies] = useState([]);
+  const companyDropdownRef = useRef(null);
+
+  useOnClickOutside(companyDropdownRef, () => {
+    setIsDropDownOpen(false);
+  });
+
+  useEffect(() => {
+    const temp = companyData.filter((company: CompanyDataType) =>
+      company.name.toLowerCase().includes(search.toLowerCase())
+    );
+    setFilteredCompanies(temp);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search]);
+
+  useEffect(() => {
+    if (search.trim() && filteredCompanies.length > 0) setIsDropDownOpen(true);
+    else setIsDropDownOpen(false);
+  }, [filteredCompanies, search]);
+
+  return (
+    <div className="mb-2 w-full relative">
+      <input
+        type="text"
+        placeholder="Search Company"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="border p-2 w-full focus:outline-green-800 rounded-md"
+        autoComplete="false"
+        autoCorrect="false"
+      />
+      {isDropdownOpen && (
+        <div
+          ref={companyDropdownRef}
+          className="absolute top-[2.5rem] w-full border p-2 mt-1 bg-neutral-200 shadow-xl rounded-md max-h-48 overflow-y-auto z-[100000]"
+        >
+          {filteredCompanies.map((company: any) => (
+            <div
+              key={company.id}
+              onClick={() => {
+                onChange(company.id);
+                setSearch(company.name);
+                setIsDropDownOpen(false);
+              }}
+              className="p-2 cursor-pointer hover:bg-green-100"
+            >
+              {company.name}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
 const StatusDropdown: React.FC<{
   status: string;
   onChange: (value: string) => void;
@@ -129,6 +193,41 @@ const StatusDropdown: React.FC<{
     >
       <option value="" disabled>
         Select Status
+      </option>
+      {options.map((option) => (
+        <option key={option} value={option}>
+          {option.charAt(0).toUpperCase() + option.slice(1)}
+        </option>
+      ))}
+    </select>
+  );
+};
+
+const PositionDropdown: React.FC<{
+  position: string;
+  onChange: (value: string) => void;
+}> = ({ position, onChange }) => {
+  const options = [
+    "VICE_PRESIDENT_OF_HIRING",
+    "ENGINEERING_MANAGER",
+    "TALENT_ACQUISITION_SPECIALIST",
+    "SOFTWARE_ENGINEER",
+    "SENIOR_SOFTWARE_ENGINEER",
+    "CAMPUS_RECRUITER",
+    "DIRECTOR_OF_ENGINEERING",
+    "HIRING_MANAGER",
+    "HR_MANAGER",
+    "DIRECTOR_OF_TALENT_ACQUISITION",
+  ];
+  return (
+    <select
+      title={""}
+      value={position}
+      onChange={(e) => onChange(e.target.value)}
+      className="border p-2 w-full focus:outline-green-800 mb-2"
+    >
+      <option value="" disabled>
+        Select Position
       </option>
       {options.map((option) => (
         <option key={option} value={option}>
@@ -177,6 +276,7 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
     name: "",
     email: "",
     company: "",
+    position: "",
     phone_numbers: [],
     linkedin: "",
   });
@@ -221,8 +321,13 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
       dispatch(
         addActivity({ token: user.token, newActivityData: activityData })
       );
-    if (currentSection === 2)
+    if (currentSection === 2) {
+      if (hrData.company === null || hrData.company.length === 0) {
+        toastError("Select a Company.");
+        return;
+      }
       dispatch(addHRData({ token: user.token, hrData }));
+    }
   };
 
   // Error and Loader Controllers for Company Section...
@@ -279,15 +384,16 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
 
   useEffect(() => {
     if (!addLoading) {
-      setHRData({
-        id: 0,
-        name: "",
-        email: "",
-        company: "",
-        phone_numbers: [],
-        linkedin: "",
-      });
-      closePopup();
+      // setHRData({
+      //   id: 0,
+      //   name: "",
+      //   email: "",
+      //   company: "",
+      //   position: "",
+      //   phone_numbers: [],
+      //   linkedin: "",
+      // });
+      // closePopup();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [addLoading]);
@@ -350,7 +456,8 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
         fields: [
           { name: "name", placeholder: "HR Name" },
           { name: "email", placeholder: "Email", type: "email" },
-          { name: "company", placeholder: "Company" },
+          { name: "company", placeholder: "Company", isDropdown: true },
+          { name: "position", placeholder: "Position", isDropdown: true },
           { name: "linkedin", placeholder: "LinkedIn Profile" },
           {
             name: "phone_number",
@@ -378,7 +485,29 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
             handleValueChange,
             isDropdown,
           }: any) => {
-            if (isDropdown) {
+            if (isDropdown && name === "company") {
+              return (
+                <CompanyDropdown
+                  key={name}
+                  value={(data as any)[name]}
+                  onChange={(value) =>
+                    setData((prev: any) => ({ ...prev, company: value }))
+                  }
+                />
+              );
+            }
+            if (isDropdown && name === "position") {
+              return (
+                <PositionDropdown
+                  key={name}
+                  position={(data as any)[name]}
+                  onChange={(value) => {
+                    setData((prev: any) => ({ ...prev, [name]: value }));
+                  }}
+                />
+              );
+            }
+            if (isDropdown && name === "status") {
               return (
                 <StatusDropdown
                   key={name}

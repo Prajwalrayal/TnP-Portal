@@ -88,7 +88,6 @@ export async function POST(request: Request) {
 
   try {
     const sessionToken = token || "";
-    console.log(sessionToken, newCompanyData);
 
     const response = await fetch(backendUrl, {
       method: "POST",

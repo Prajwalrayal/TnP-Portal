@@ -81,7 +81,7 @@ export const updateCompany = createAsyncThunk(
     companyData: InputCompanyDataType;
   }) => {
     const response = await fetch(`/api/companies/update/${companyData.id}`, {
-      method: "POST",
+      method: "PUT",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({ ...companyData, token }),
     });

@@ -6,6 +6,7 @@ interface HRDataType {
   name: string;
   email: string;
   company: string;
+  position: string;
   phone_numbers: string[];
   linkedin: string;
 }
@@ -13,9 +14,10 @@ interface HRDataType {
 const processHRData = (data: any[]): HRDataType[] => {
   return data.map((item) => ({
     id: item.id || 0,
-    name: `${item.firstName || "Unknown"} ${item.lastName || "Name"}`,
+    name: `${item.firstName || "Unknown Name"} ${item.lastName || ""}`,
     email: item.email || "No email provided",
     company: item.company?.name || "Unknown Company",
+    position: item.position || "Unknown Position",
     phone_numbers: item.mobileNumbers || [],
     linkedin: item.linkedinUrl || "No LinkedIn profile",
   }));
