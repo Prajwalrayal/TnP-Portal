@@ -9,6 +9,7 @@ interface Activity {
   desc: string;
   name: string;
   student: string;
+  company: string;
   status: string;
   init_date: Date;
   last_updated_on: Date;
@@ -68,19 +69,23 @@ export const fetchActivitiesData = createAsyncThunk(
     token: string;
     onSuccess: (upcoming: Activity[], previous: Activity[]) => void;
   }) => {
+    let upcoming = [],
+      previous = [];
     const response = await fetch("/api/activities", {
       headers: {
         Authorization: token,
       },
     });
     const data = await response.json();
-    const currentDate = new Date();
-    const upcoming = data.filter(
-      (activity: Activity) => new Date(activity.init_date) >= currentDate
-    );
-    const previous = data.filter(
-      (activity: Activity) => new Date(activity.init_date) < currentDate
-    );
+    if (Array.isArray(data)) {
+      const currentDate = new Date();
+      upcoming = data.filter(
+        (activity: Activity) => new Date(activity.init_date) >= currentDate
+      );
+      previous = data.filter(
+        (activity: Activity) => new Date(activity.init_date) < currentDate
+      );
+    }
 
     onSuccess(upcoming, previous);
 

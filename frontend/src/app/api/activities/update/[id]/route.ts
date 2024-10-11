@@ -29,13 +29,15 @@ const processActivityData = (item: any): ActivityDataType => {
 };
 
 export async function PUT(request: Request) {
-  const { id, logs, token, desc, name, status } = await request.json();
+  const { id, logs, token, desc, name, student, status } = await request.json();
   const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/activities/${id}`;
 
   try {
     const sessionToken = token || "";
 
     const updatedData = {
+      name,
+      userEmail: student,
       description: desc,
       status,
     };

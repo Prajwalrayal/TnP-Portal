@@ -29,23 +29,21 @@ const processActivityData = (item: any): ActivityDataType => {
 };
 
 export async function POST(request: Request) {
-  const { name, desc, student, status, init_date, token } =
+  const { name, desc, student, status, init_date, token, company } =
     await request.json();
   const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/activities`;
 
   const currentDate = new Date();
-  const initialLog = {
-    [currentDate.toISOString()]: "Initial log",
-  };
 
   const newActivity = {
     name,
-    desc,
-    student,
+    description: desc,
+    userEmail: student,
     status,
+    companyId: parseInt(company),
     init_date: new Date(init_date),
     last_updated_on: currentDate,
-    logs: [initialLog],
+    logs: [],
   };
 
   try {

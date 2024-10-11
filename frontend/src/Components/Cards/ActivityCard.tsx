@@ -1,4 +1,4 @@
-import { MouseEvent } from "react";
+import { MouseEvent, useRef } from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
   fetchActivityLogsData,
@@ -8,6 +8,7 @@ import {
 import { useEffect, useState } from "react";
 import { FaChevronDown, FaEdit } from "react-icons/fa";
 import { toastError } from "@/utils/toasts.mjs";
+import useOnClickOutside from "@/custom-hooks/useOnClickOutside";
 
 interface Log {
   [key: string]: string;
@@ -19,6 +20,7 @@ interface Activity {
   name: string;
   student: string;
   status: string;
+  company: string;
   init_date: Date;
   last_updated_on: Date;
   logs: Log[];
@@ -26,12 +28,102 @@ interface Activity {
   setPreviousData?: any;
 }
 
+const CompanyDropdown: React.FC<{
+  value: string;
+  onChange: (value: string) => void;
+}> = ({ value, onChange }) => {
+  const [search, setSearch] = useState(value || "");
+  const [isDropdownOpen, setIsDropDownOpen] = useState(false);
+  const { companyData } = useAppSelector((state: any) => state.companies);
+  const [filteredCompanies, setFilteredCompanies] = useState([]);
+  const companyDropdownRef = useRef(null);
+
+  useOnClickOutside(companyDropdownRef, () => {
+    setIsDropDownOpen(false);
+  });
+
+  useEffect(() => {
+    const company = companyData.find((company: any) => company.name === value);
+    onChange(company.id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    const temp = companyData.filter((company: any) =>
+      company.name.toLowerCase().includes(search.toLowerCase())
+    );
+    setFilteredCompanies(temp);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search]);
+
+  useEffect(() => {
+    if (search.trim() && filteredCompanies.length > 0) setIsDropDownOpen(true);
+    else setIsDropDownOpen(false);
+  }, [search, filteredCompanies]);
+
+  return (
+    <div className="mb-2 w-full relative">
+      <input
+        type="text"
+        placeholder="Search Company"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="border p-2 w-full focus:outline-green-800 rounded-md"
+      />
+      {isDropdownOpen && (
+        <div
+          ref={companyDropdownRef}
+          className="absolute top-[2.5rem] w-full border p-2 mt-1 bg-neutral-200 shadow-xl rounded-md max-h-48 overflow-y-auto z-[100000]"
+        >
+          {filteredCompanies.map((company: any) => (
+            <div
+              key={company.id}
+              onClick={() => {
+                onChange(company.id);
+                setIsDropDownOpen(false);
+              }}
+              className="p-2 cursor-pointer hover:bg-green-100"
+            >
+              {company.name}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const StatusDropdown: React.FC<{
+  status: string;
+  onChange: (value: string) => void;
+}> = ({ status, onChange }) => {
+  const options = ["INITIATED", "COMPLETED", "REJECTED"];
+  return (
+    <select
+      title={""}
+      value={status}
+      onChange={(e) => onChange(e.target.value)}
+      className="border p-2 w-full focus:outline-green-800 mb-2"
+    >
+      <option value="" disabled>
+        Select Status
+      </option>
+      {options.map((option) => (
+        <option key={option} value={option}>
+          {option.charAt(0).toUpperCase() + option.slice(1)}
+        </option>
+      ))}
+    </select>
+  );
+};
+
 const ActivityCard: React.FC<Activity> = ({
   id,
   desc,
   name,
   student,
   status,
+  company,
   init_date,
   last_updated_on,
   logs,
@@ -44,6 +136,8 @@ const ActivityCard: React.FC<Activity> = ({
   const [editName, setEditName] = useState(name);
   const [editDesc, setEditDesc] = useState(desc);
   const [editStudent, setEditStudent] = useState(student);
+  const [editStatus, setEditStatus] = useState(status);
+  const [editCompany, setEditCompany] = useState(company);
   const dispatch = useAppDispatch();
   const {
     upcomingActivities,
@@ -160,7 +254,8 @@ const ActivityCard: React.FC<Activity> = ({
       name: editName,
       desc: editDesc,
       student: editStudent,
-      status,
+      company: editCompany,
+      status: editStatus,
       last_updated_on: new Date(),
     };
 
@@ -197,9 +292,13 @@ const ActivityCard: React.FC<Activity> = ({
         return "border-green-500";
       case "confirmed":
         return "border-blue-500";
+      case "completed":
+        return "border-blue-500";
       case "pending":
         return "border-yellow-500";
       case "cancelled":
+        return "border-red-500";
+      case "rejected":
         return "border-red-500";
       default:
         return "border-gray-500";
@@ -320,6 +419,17 @@ const ActivityCard: React.FC<Activity> = ({
               value={editDesc}
               onChange={(e) => setEditDesc(e.target.value)}
               className="border rounded w-full mb-4 p-2 resize-none focus:outline-green-700"
+            />
+
+            <StatusDropdown
+              status={editStatus}
+              onChange={(value) => {
+                setEditStatus(value);
+              }}
+            />
+            <CompanyDropdown
+              value={editCompany}
+              onChange={(value) => setEditCompany(value)}
             />
 
             <label htmlFor={`edit-student-${id}`} className="block mb-2">

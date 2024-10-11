@@ -19,6 +19,7 @@ interface Activity {
   name: string;
   student: string;
   status: string;
+  company: string;
   init_date: Date;
   last_updated_on: Date;
   logs: Log[];
@@ -183,7 +184,7 @@ const StatusDropdown: React.FC<{
   status: string;
   onChange: (value: string) => void;
 }> = ({ status, onChange }) => {
-  const options = ["upcoming", "confirmed", "pending", "cancelled"];
+  const options = ["INITIATED", "COMPLETED", "REJECTED"];
   return (
     <select
       title={""}
@@ -266,6 +267,7 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
     name: "",
     student: "",
     status: "",
+    company: "",
     init_date: new Date(),
     last_updated_on: new Date(),
     logs: [],
@@ -368,6 +370,7 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
         name: "",
         student: "",
         status: "",
+        company: "",
         init_date: new Date(),
         last_updated_on: new Date(),
         logs: [],
@@ -384,16 +387,16 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
 
   useEffect(() => {
     if (!addLoading) {
-      // setHRData({
-      //   id: 0,
-      //   name: "",
-      //   email: "",
-      //   company: "",
-      //   position: "",
-      //   phone_numbers: [],
-      //   linkedin: "",
-      // });
-      // closePopup();
+      setHRData({
+        id: 0,
+        name: "",
+        email: "",
+        company: "",
+        position: "",
+        phone_numbers: [],
+        linkedin: "",
+      });
+      closePopup();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [addLoading]);
@@ -440,6 +443,7 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
             placeholder: "Status",
             isDropdown: true,
           },
+          { name: "company", placeholder: "Company", isDropdown: true },
           {
             name: "init_date",
             placeholder: "Initial Date",
