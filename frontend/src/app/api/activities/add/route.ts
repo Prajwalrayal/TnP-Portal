@@ -1,4 +1,3 @@
-import activityList from "@/utils/Activities.json";
 import { NextResponse } from "next/server";
 
 interface Log {
@@ -40,7 +39,6 @@ export async function POST(request: Request) {
   };
 
   const newActivity = {
-    // id: activityList.length > 0 ? activityList[activityList.length - 1].id + 1 : 1,
     name,
     desc,
     student,
@@ -49,8 +47,6 @@ export async function POST(request: Request) {
     last_updated_on: currentDate,
     logs: [initialLog],
   };
-
-  // return NextResponse.json(newActivity, { status: 201 });
 
   try {
     const sessionToken = token || "";

@@ -1,4 +1,3 @@
-import hrList from "@/utils/HR.json";
 import { NextResponse } from "next/server";
 
 interface HRDataType {
@@ -40,20 +39,6 @@ export async function PUT(request: Request) {
     mobileNumbers: phone_numbers,
     linkedinUrl: linkedin,
   };
-
-  // const hrIndex = hrList.findIndex((hr) => hr.id === id);
-  // if (hrIndex === -1) {
-  //   return NextResponse.json({ error: "HR not found" }, { status: 404 });
-  // }
-
-  // const updatedHR = {
-  //   ...hrList[hrIndex],
-  //   ...updatedData,
-  // };
-
-  // hrList[hrIndex] = updatedHR;
-
-  // return NextResponse.json(updatedHR);
 
   try {
     const sessionToken = token || "";

@@ -1,4 +1,3 @@
-import activityList from "@/utils/Activities.json";
 import { NextResponse } from "next/server";
 
 interface Log {
@@ -34,13 +33,6 @@ export async function GET(request: Request) {
   const offset = parseInt(searchParams.get("offset") || "0", 10);
   const limit = parseInt(searchParams.get("limit") || "20", 10);
   const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/activities?offset=${offset}&limit=${limit}`;
-
-  // if (typeof activityList === "undefined" || activityList.length === 0) {
-  //   return NextResponse.json([]);
-  // }
-
-  // const paginatedActivities = activityList.slice(offset, offset + limit);
-  // return NextResponse.json(paginatedActivities);
 
   try {
     const authorizationHeader = request.headers.get("authorization");

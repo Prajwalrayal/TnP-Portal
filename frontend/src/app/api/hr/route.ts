@@ -1,4 +1,3 @@
-import hrList from "@/utils/HR.json";
 import { NextResponse } from "next/server";
 
 interface HRDataType {
@@ -24,11 +23,6 @@ const processHRData = (data: any[]): HRDataType[] => {
 };
 
 export async function GET(request: Request) {
-  // if (typeof hrList === "undefined" || hrList.length === 0) {
-  //   return NextResponse.json([]);
-  // }
-
-  // return NextResponse.json(hrList);
   const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/clients`;
 
   try {
