@@ -10,6 +10,7 @@ interface ActivityDataType {
   name: string;
   student: string;
   status: string;
+  company: string;
   init_date: Date;
   last_updated_on: Date;
   logs: Log[];
@@ -22,6 +23,7 @@ const processActivityData = (data: any[]): ActivityDataType[] => {
     name: item.userName || "Unknown",
     student: item.userEmail || "No email",
     status: item.status || "UNKNOWN",
+    company: item.company?.name || "Unknown Company",
     init_date: new Date(item.createdAt) || new Date(),
     last_updated_on: new Date(item.lastUpdated) || new Date(),
     logs: item.logs || [],

@@ -17,6 +17,7 @@ interface ActivityDataType {
   desc: string;
   name: string;
   student: string;
+  company: string;
   status: string;
   init_date: Date;
   last_updated_on: Date;
@@ -144,6 +145,7 @@ const Activities = () => {
             name={activity.name}
             student={activity.student}
             status={activity.status}
+            company={activity.company}
             init_date={activity.init_date}
             last_updated_on={activity.last_updated_on}
             logs={activity.logs}
