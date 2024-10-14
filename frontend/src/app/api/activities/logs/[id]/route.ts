@@ -66,7 +66,6 @@ export async function POST(
 
     if (!response.ok) {
       const errorData = await response.json();
-      console.log(errorData);
       return NextResponse.json(
         { error: errorData.message || "Failed to add log" },
         { status: response.status }
@@ -74,7 +73,6 @@ export async function POST(
     }
 
     const addedLog = await response.json();
-    console.log(addedLog);
     return NextResponse.json(addedLog, { status: 201 });
   } catch (error) {
     return NextResponse.json(
