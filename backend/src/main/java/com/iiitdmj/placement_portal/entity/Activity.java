@@ -27,7 +27,6 @@ public class Activity {
 
     @ManyToOne
     @JoinColumn(name = "user_email")
-    @JsonIgnore
     private User user;
 
     @ManyToOne
@@ -41,4 +40,3 @@ public class Activity {
     private LocalDateTime lastUpdated;
 
 }
-

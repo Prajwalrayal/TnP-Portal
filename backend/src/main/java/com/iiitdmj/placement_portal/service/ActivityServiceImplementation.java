@@ -23,7 +23,7 @@ public class ActivityServiceImplementation implements ActivityService {
     private final ActivityRepository activityRepository;
 
     @Autowired
-    private  CompanyRepository companyRepository;
+    private CompanyRepository companyRepository;
 
     @Autowired
     private UserRepository userRepository;
@@ -60,7 +60,8 @@ public class ActivityServiceImplementation implements ActivityService {
         activity.setDescription(activityRequest.getDescription());
         activity.setCompany(companyRepository.findById(activityRequest
                 .getCompanyId())
-                .orElseThrow(() -> new EntityNotFoundException("Company not found with id: " + activityRequest.getCompanyId())));
+                .orElseThrow(() -> new EntityNotFoundException(
+                        "Company not found with id: " + activityRequest.getCompanyId())));
         activity.setUser(userRepository.findByEmail(activityRequest.getUserEmail()));
         activity.setCreatedAt(LocalDateTime.now());
         activity.setLastUpdated(LocalDateTime.now());
@@ -74,8 +75,7 @@ public class ActivityServiceImplementation implements ActivityService {
                 activity.getUser().getEmail(),
                 activity.getUser().getFirstName(),
                 activity.getCreatedAt(),
-                activity.getLastUpdated()
-        );
+                activity.getLastUpdated());
 
         return activityResponse;
     }
@@ -87,16 +87,17 @@ public class ActivityServiceImplementation implements ActivityService {
     }
 
     @Override
-    public Activity updateActivity(ActivityRequest updateActivity, Integer id) {
+    public ActivityResponse updateActivity(ActivityRequest updateActivity, Integer id) {
         Activity currentActivity = activityRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Activity not found with id: " + id));
         currentActivity.setLastUpdated(LocalDateTime.now());
         currentActivity.setStatus(updateActivity.getStatus());
         currentActivity.setDescription(updateActivity.getDescription());
         // if companyId and userId exists
-        if (updateActivity.getCompanyId() != null ) {
+        if (updateActivity.getCompanyId() != null) {
             currentActivity.setCompany(companyRepository.findById(updateActivity.getCompanyId())
-                    .orElseThrow(() -> new EntityNotFoundException("Company not found with id: " + updateActivity.getCompanyId())));
+                    .orElseThrow(() -> new EntityNotFoundException(
+                            "Company not found with id: " + updateActivity.getCompanyId())));
         }
         if (updateActivity.getUserEmail() != null) {
             User user = userRepository.findByEmail(updateActivity.getUserEmail());
@@ -106,6 +107,6 @@ public class ActivityServiceImplementation implements ActivityService {
             currentActivity.setUser(user);
         }
 
-        return activityRepository.save(currentActivity) ;
+        return new ActivityResponse(activityRepository.save(currentActivity));
     }
 }

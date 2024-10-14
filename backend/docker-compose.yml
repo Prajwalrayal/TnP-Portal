@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   db:
@@ -15,6 +15,7 @@ services:
 
   placement-portal:
     image: placement-portal:latest
+    platform: linux/amd64
     build:
       context: .
     container_name: placement-portal
