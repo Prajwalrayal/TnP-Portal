@@ -7,7 +7,6 @@ interface Log {
 interface Activity {
   id: number;
   desc: string;
-  name: string;
   student: string;
   company: string;
   status: string;
@@ -78,12 +77,11 @@ export const fetchActivitiesData = createAsyncThunk(
     });
     const data = await response.json();
     if (Array.isArray(data)) {
-      const currentDate = new Date();
       upcoming = data.filter(
-        (activity: Activity) => new Date(activity.init_date) >= currentDate
+        (activity: Activity) => activity.status === "INITIATED"
       );
       previous = data.filter(
-        (activity: Activity) => new Date(activity.init_date) < currentDate
+        (activity: Activity) => activity.status !== "INITIATED"
       );
     }
 
@@ -101,7 +99,6 @@ export const addActivity = createAsyncThunk(
   }: {
     token: string;
     newActivityData: {
-      name: string;
       desc: string;
       student: string;
       status: string;
@@ -162,14 +159,23 @@ export const updateActivityLogs = createAsyncThunk(
     onSuccess: (logs: Log) => void;
   }) => {
     const response = await fetch(`/api/activities/logs/${id}`, {
-      method: "PUT",
+      method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ logs, token }),
     });
     const data = await response.json();
+    if (data.hasOwnProperty("error")) {
+      return {
+        id,
+        updatedLog: { "": "" },
+      };
+    }
     const updatedLog = convertLogEntry(data);
     onSuccess(updatedLog);
-    return { id, updatedLog };
+    return {
+      id,
+      updatedLog,
+    };
   }
 );
 
@@ -201,7 +207,7 @@ const filterActivities = (
 ): Activity[] => {
   if (!searchText) return activities;
   const afterFilter = activities.filter((activity) => {
-    return activity.name.toLowerCase().includes(searchText.toLowerCase());
+    return activity.desc.toLowerCase().includes(searchText.toLowerCase());
   });
 
   return afterFilter;
@@ -397,11 +403,7 @@ const activitiesSlice = createSlice({
         const filteredUpcoming = state.filteredUpcoming;
 
         if (
-          upcomingActivities.some(
-            (activity) =>
-              activity.id === newActivity.id ||
-              activity.name.toLowerCase() === newActivity.name.toLowerCase()
-          )
+          upcomingActivities.some((activity) => activity.id === newActivity.id)
         ) {
           state.pendingAdd = false;
           return;
@@ -410,7 +412,7 @@ const activitiesSlice = createSlice({
         upcomingActivities.push(newActivity);
 
         const matchesInUpcoming = filteredUpcoming.some((activity) =>
-          activity.name.toLowerCase().includes(newActivity.name.toLowerCase())
+          activity.desc.toLowerCase().includes(newActivity.desc.toLowerCase())
         );
 
         if (matchesInUpcoming) filteredUpcoming.push(newActivity);

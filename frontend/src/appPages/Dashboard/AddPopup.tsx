@@ -16,7 +16,6 @@ interface Log {
 interface Activity {
   id: number;
   desc: string;
-  name: string;
   student: string;
   status: string;
   company: string;
@@ -95,6 +94,7 @@ interface InputFieldProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   type?: string;
   placeholder?: string;
+  disabled?: boolean;
 }
 
 const InputField: React.FC<InputFieldProps> = ({
@@ -104,6 +104,7 @@ const InputField: React.FC<InputFieldProps> = ({
   onChange,
   type = "text",
   placeholder = "",
+  disabled = false,
 }) => (
   <div className="mb-2 w-full relative">
     <input
@@ -111,6 +112,7 @@ const InputField: React.FC<InputFieldProps> = ({
       id={id}
       name={name}
       value={value}
+      disabled={disabled}
       onChange={onChange}
       placeholder={placeholder}
       className="border p-2 w-full flex-1 focus:outline-green-800 rounded-md"
@@ -247,6 +249,7 @@ interface PopupProps {
 
 const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
   const dispatch = useAppDispatch();
+  const { user } = useAppSelector((state) => state.user);
   const [companyData, setCompanyData] = useState<InputCompanyDataType>({
     name: "",
     desc: "",
@@ -264,8 +267,7 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
   const [activityData, setActivityData] = useState<Activity>({
     id: 0,
     desc: "",
-    name: "",
-    student: "",
+    student: user.emailid,
     status: "",
     company: "",
     init_date: new Date(),
@@ -283,7 +285,6 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
     linkedin: "",
   });
 
-  const { user } = useAppSelector((state) => state.user);
   const { pendingAdd, addError } = useAppSelector((state) => state.activities);
   const { addLoading, addError: hrAddError } = useAppSelector(
     (state) => state.hr
@@ -367,8 +368,7 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
       setActivityData({
         id: 0,
         desc: "",
-        name: "",
-        student: "",
+        student: user.emailid,
         status: "",
         company: "",
         init_date: new Date(),
@@ -435,9 +435,13 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
         data: activityData,
         setData: setActivityData,
         fields: [
-          { name: "name", placeholder: "Activity Name" },
           { name: "desc", placeholder: "Description" },
-          { name: "student", placeholder: "Student" },
+          {
+            name: "student",
+            placeholder: "Student",
+            isDisabled: true,
+            value: user.emailid,
+          },
           {
             name: "status",
             placeholder: "Status",
@@ -488,6 +492,8 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
             formatValue,
             handleValueChange,
             isDropdown,
+            isDisabled,
+            value,
           }: any) => {
             if (isDropdown && name === "company") {
               return (
@@ -573,8 +579,11 @@ const AddPopup: FC<PopupProps> = ({ isOpen, closePopup, currentSection }) => {
                 key={name}
                 id={name}
                 name={name}
+                disabled={isDisabled}
                 value={
-                  formatValue
+                  value
+                    ? value
+                    : formatValue
                     ? formatValue((data as any)[name])
                     : (data as any)[name]
                 }

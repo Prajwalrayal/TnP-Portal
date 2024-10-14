@@ -7,7 +7,6 @@ interface Log {
 interface ActivityDataType {
   id: number;
   desc: string;
-  name: string;
   student: string;
   status: string;
   company: string;
@@ -20,7 +19,6 @@ const processActivityData = (data: any[]): ActivityDataType[] => {
   return data.map((item) => ({
     id: item.id || 0,
     desc: item.description || "No description provided",
-    name: item.userName || "Unknown",
     student: item.userEmail || "No email",
     status: item.status || "UNKNOWN",
     company: item.company?.name || "Unknown Company",
@@ -34,7 +32,7 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const offset = parseInt(searchParams.get("offset") || "0", 10);
   const limit = parseInt(searchParams.get("limit") || "20", 10);
-  const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/activities?offset=${offset}&limit=${limit}`;
+  const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/activities`;
 
   try {
     const authorizationHeader = request.headers.get("authorization");

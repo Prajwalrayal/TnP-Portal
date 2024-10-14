@@ -17,7 +17,6 @@ interface Log {
 interface Activity {
   id: number;
   desc: string;
-  name: string;
   student: string;
   status: string;
   company: string;
@@ -27,6 +26,19 @@ interface Activity {
   setUpcomingData?: any;
   setPreviousData?: any;
 }
+
+const convertLogData = (data: Log[]) => {
+  return data
+    .map((entry) => {
+      const key = Object.keys(entry)[0];
+      const value = entry[key];
+      return value
+        .split(" ")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+    })
+    .join(", ");
+};
 
 const CompanyDropdown: React.FC<{
   value: string;
@@ -44,6 +56,7 @@ const CompanyDropdown: React.FC<{
 
   useEffect(() => {
     const company = companyData.find((company: any) => company.name === value);
+    if (company === undefined) return;
     onChange(company.id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -79,7 +92,8 @@ const CompanyDropdown: React.FC<{
             <div
               key={company.id}
               onClick={() => {
-                onChange(company.id);
+                onChange(company.name);
+                setSearch(company.name);
                 setIsDropDownOpen(false);
               }}
               className="p-2 cursor-pointer hover:bg-green-100"
@@ -120,7 +134,6 @@ const StatusDropdown: React.FC<{
 const ActivityCard: React.FC<Activity> = ({
   id,
   desc,
-  name,
   student,
   status,
   company,
@@ -131,7 +144,7 @@ const ActivityCard: React.FC<Activity> = ({
   setPreviousData,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [updatedLogs, setUpdatedLogs] = useState<string>(JSON.stringify(logs));
+  const [updatedLogs, setUpdatedLogs] = useState<string>("");
   const [isEditing, setIsEditing] = useState(false);
   const [editName, setEditName] = useState(name);
   const [editDesc, setEditDesc] = useState(desc);
@@ -153,6 +166,12 @@ const ActivityCard: React.FC<Activity> = ({
   } = useAppSelector((state) => state.activities);
   const { user } = useAppSelector((state) => state.user);
 
+  useEffect(() => {
+    let templogs = convertLogData(logs);
+    setUpdatedLogs(templogs);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [logs]);
+
   const handleToggleLogs = () => {
     if (!isExpanded) {
       const onSuccess = (data: Log[]) => {
@@ -166,7 +185,17 @@ const ActivityCard: React.FC<Activity> = ({
   const handleUpdateLogs = async (e: MouseEvent<HTMLElement>) => {
     e.preventDefault();
     try {
-      const parsedLogs = JSON.parse(updatedLogs);
+      const entries = updatedLogs.split(",").map((entry) => entry.trim());
+
+      const parsedLogs = entries.map((entry, index) => {
+        const date =
+          index < logs.length
+            ? Object.keys(logs[index])[0]
+            : new Date().toISOString();
+        return { [date]: entry };
+      });
+
+      const newLogs = parsedLogs.slice(logs.length);
 
       const isLog = (log: any): log is Log => {
         return (
@@ -178,16 +207,20 @@ const ActivityCard: React.FC<Activity> = ({
       };
 
       const onSuccess = (data: Log) => {
-        const temp = JSON.parse(updatedLogs);
-        temp.push(data);
-        setUpdatedLogs(JSON.stringify(temp));
+        const temp = convertLogData(logs)
+          .split(",")
+          .map((entry) => entry.trim());
+
+        temp.push(...Object.values(data));
+
+        setUpdatedLogs(temp.join(", "));
       };
 
-      if (Array.isArray(parsedLogs) && parsedLogs.every(isLog)) {
+      if (Array.isArray(newLogs) && newLogs.every(isLog)) {
         dispatch(
           updateActivityLogs({
             id,
-            logs: parsedLogs,
+            logs: newLogs,
             token: user.token,
             onSuccess,
           })
@@ -207,6 +240,8 @@ const ActivityCard: React.FC<Activity> = ({
 
   const handleCloseEditPopup = () => {
     setIsEditing(false);
+    setEditCompany(company);
+    setEditStatus(status);
   };
 
   const updateOnSearch = (updatedActivity: Activity) => {
@@ -328,11 +363,13 @@ const ActivityCard: React.FC<Activity> = ({
                 )}`}
                 title={`Status: ${status}`}
               />
-              <h3 className="font-bold group-hover:text-primary">{name}</h3>
+              <h3 className="font-bold group-hover:text-primary">{`${company}: ${desc.slice(
+                0,
+                50
+              )}`}</h3>
             </div>
-            <p>{desc}</p>
             <p>{`Student: ${student}`}</p>
-            <div className="flex gap-x-2 items-center justify-start">
+            <div className="flex gap-x-2 pt-3 items-center justify-start">
               <p>{"Logs: "}</p>
               <span
                 onClick={(e) => {
@@ -372,6 +409,7 @@ const ActivityCard: React.FC<Activity> = ({
             id={`logs-${id}`}
             value={updatedLogs}
             onChange={(e) => {
+              e.preventDefault();
               const inputValue = e.target.value;
               setUpdatedLogs(inputValue);
             }}
@@ -388,7 +426,7 @@ const ActivityCard: React.FC<Activity> = ({
             {pendingLogUpdate ? (
               <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-neutral-200 border-solid" />
             ) : (
-              <p>{"Update Logs"}</p>
+              <p className="cursor-pointer">{"Update Logs"}</p>
             )}
           </button>
         </div>
@@ -399,17 +437,6 @@ const ActivityCard: React.FC<Activity> = ({
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-[1000]">
           <div className="bg-white rounded-lg p-6 w-11/12 max-w-md">
             <h2 className="text-lg font-bold mb-4">Edit Activity</h2>
-
-            <label htmlFor={`edit-name-${id}`} className="block mb-2">
-              Name
-            </label>
-            <input
-              id={`edit-name-${id}`}
-              type="text"
-              value={editName}
-              onChange={(e) => setEditName(e.target.value)}
-              className="border rounded w-full mb-4 p-2 focus:outline-green-700"
-            />
 
             <label htmlFor={`edit-desc-${id}`} className="block mb-2">
               Description

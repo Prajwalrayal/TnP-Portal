@@ -48,11 +48,12 @@ export async function POST(
   { params }: { params: { id: string } }
 ) {
   const { id } = params;
-  const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/activities/add-logs`;
+  const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/activities/add-log`;
 
   try {
-    const { token, log } = await request.json();
-    const sessionToken = token || "";
+    const body = await request.json();
+    const log = body.logs[0];
+    const sessionToken = body.token || "";
 
     const response = await fetch(backendUrl, {
       method: "POST",
@@ -60,11 +61,12 @@ export async function POST(
         "Content-Type": "application/json",
         Authorization: `Bearer ${sessionToken}`,
       },
-      body: JSON.stringify({ activityId: id, log }),
+      body: JSON.stringify({ activityId: id, log: Object.values(log)[0] }),
     });
 
     if (!response.ok) {
       const errorData = await response.json();
+      console.log(errorData);
       return NextResponse.json(
         { error: errorData.message || "Failed to add log" },
         { status: response.status }
@@ -72,6 +74,7 @@ export async function POST(
     }
 
     const addedLog = await response.json();
+    console.log(addedLog);
     return NextResponse.json(addedLog, { status: 201 });
   } catch (error) {
     return NextResponse.json(

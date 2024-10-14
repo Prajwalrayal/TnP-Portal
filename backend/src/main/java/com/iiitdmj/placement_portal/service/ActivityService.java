@@ -15,7 +15,7 @@ public interface ActivityService {
 
     List<ActivityResponse> getAllActivites();
 
-    Activity updateActivity(ActivityRequest updateActivity, Integer id);
+    ActivityResponse updateActivity(ActivityRequest updateActivity, Integer id);
 
     ActivityLog addLog(ActivityLogRequest activityLogRequestDTO);
 

@@ -7,8 +7,8 @@ interface Log {
 interface ActivityDataType {
   id: number;
   desc: string;
-  name: string;
   student: string;
+  company: string;
   status: string;
   init_date: Date;
   last_updated_on: Date;
@@ -19,8 +19,8 @@ const processActivityData = (item: any): ActivityDataType => {
   return {
     id: item.id || 0,
     desc: item.description || "No description provided",
-    name: item.userName || "Unknown",
     student: item.userEmail || "No email",
+    company: item.company.name,
     status: item.status || "UNKNOWN",
     init_date: new Date(item.createdAt) || new Date(),
     last_updated_on: new Date(item.lastUpdated) || new Date(),
@@ -29,17 +29,18 @@ const processActivityData = (item: any): ActivityDataType => {
 };
 
 export async function PUT(request: Request) {
-  const { id, logs, token, desc, name, student, status } = await request.json();
+  const { id, logs, token, desc, student, status, company } =
+    await request.json();
   const backendUrl = `${process.env.NEXT_PUBLIC_SERVER_HOST}/activities/${id}`;
 
   try {
     const sessionToken = token || "";
 
     const updatedData = {
-      name,
       userEmail: student,
       description: desc,
       status,
+      companyId: parseInt(company),
     };
 
     const response = await fetch(backendUrl, {

@@ -15,7 +15,6 @@ interface Log {
 interface ActivityDataType {
   id: number;
   desc: string;
-  name: string;
   student: string;
   company: string;
   status: string;
@@ -142,7 +141,6 @@ const Activities = () => {
           <ActivityCard
             id={activity.id}
             desc={activity.desc}
-            name={activity.name}
             student={activity.student}
             status={activity.status}
             company={activity.company}

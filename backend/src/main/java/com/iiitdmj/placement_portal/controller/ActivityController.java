@@ -24,6 +24,7 @@ public class ActivityController {
     public ActivityController(ActivityService activityService) {
         this.activityService = activityService;
     }
+
     @GetMapping("")
     public List<ActivityResponse> getAllActivities() {
         return activityService.getAllActivites();
@@ -35,8 +36,8 @@ public class ActivityController {
     }
 
     @PutMapping("/{id}")
-    public Activity updateActivity(@Valid @RequestBody ActivityRequest activity, @PathVariable Integer id) {
-        return activityService.updateActivity(activity,id);
+    public ActivityResponse updateActivity(@Valid @RequestBody ActivityRequest activity, @PathVariable Integer id) {
+        return activityService.updateActivity(activity, id);
     }
 
     @PostMapping("/add-log")
@@ -48,6 +49,5 @@ public class ActivityController {
     public List<ActivityLog> getLogsByActivityId(@PathVariable Integer id) {
         return activityService.getLogsByActivityId(id);
     }
-
 
 }
